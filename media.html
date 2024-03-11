@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Media Center</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/media.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/apple-icon-57x57.png" type="image/x-icon">
+    
+    <!-- bs5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Commissioner:wght@100;300;500;700;900&display=swap" rel="stylesheet">
+    
+</head>
+<body id="body">
+
+    <div class="container-fluid p-0 overflow-hidden" id="mainBg">
+
+
+        <!-- navbar starts -->
+
+        <header id="header" class="container-fluid p-0 px-4 d-flex align-items-center position-fixed top-0">
+            <nav class="navbar container-fluid w-100 navbar-expand-lg bg-transparent py-4 d-flex align-items-center position-relative" id="navBar">
+                <div class="container-fluid collapse navbar-collapse w-100 px-4 d-flex align-items-center justify-content-between" id="navbarSupportedContent">
+
+                    <div class="navLeft d-flex gap-2">
+                        <a href="index.html" class="navbar-brand d-flex m-0 justify-content-center align-items-center" style="max-width: 100% !important;">
+                            <img src="img/logo.png" width="110" alt="">
+                        </a>
+
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item d-flex align-items-center px-2">
+                            <a class="fw-normal text-white fw-bold text-decoration-none" aria-current="page" href="media.html"> Media Center</a>
+                        </li>
+                                    
+                        </ul>
+                    </div>
+                                
+                    <div class="div d-flex justify-content-end align-items-center gap-2">
+                        <div class="navRight d-flex align-items-center gap-3" id="navRight">
+                            <button class="btn d-flex justify-content-center align-items-center gap-1" onclick="langSelector()">
+                                <span class="text-white" id="langSpan">English</span>
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 320 512"><path fill="white" d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg></span>
+                            </button>
+
+
+                                            
+
+                            <button class="btn d-flex justify-content-center align-items-center gap-1" onclick="countSelector()">
+                                <span class="textSymbol text-white fw-bold">IN</span>
+                                <span class="text-white">India</span>
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 320 512"><path fill="white" d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg></span>
+                            </button>
+
+                            <button class="btn d-flex justify-content-center align-items-center gap-1">
+                                <span class="text-white">Newsroom</span>
+                                <span class="ms-1 mb-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13" height="13" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M488.727 0H302.545c-12.853 0-23.273 10.42-23.273 23.273s10.42 23.273 23.273 23.273h129.997L192.999 286.09c-9.089 9.089-9.089 23.823 0 32.912a23.195 23.195 0 0 0 16.455 6.816 23.194 23.194 0 0 0 16.457-6.817L465.455 79.458v129.997c0 12.853 10.42 23.273 23.273 23.273s23.273-10.42 23.273-23.273V23.273C512 10.42 501.58 0 488.727 0z" fill="#ffffff" opacity="1" data-original="#000000" class=""></path><path d="M395.636 232.727c-12.853 0-23.273 10.42-23.273 23.273v209.455H46.545V139.636H256c12.853 0 23.273-10.42 23.273-23.273S268.853 93.091 256 93.091H23.273C10.42 93.091 0 103.511 0 116.364v372.364C0 501.58 10.42 512 23.273 512h372.364c12.853 0 23.273-10.42 23.273-23.273V256c-.001-12.853-10.421-23.273-23.274-23.273z" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg></span>
+                            </button>
+
+                            <button class="btn d-flex justify-content-center align-items-center gap-1 position-relative" onclick="resOpen()">
+                                <span class="text-white">Resources</span>
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 320 512"><path fill="white" d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg></span>
+
+                                <!-- resource drop starts -->
+
+                                <div class="resource position-absolute rounded-1" id="resDrop">
+                                    <ul class="list-unstyled m-0">
+                                        <li class="d-flex justify-content-between px-3 py-2">
+                                            <a href="#" class="resAnchor text-decoration-none text-white fw-light" style="font-size: 14px;">Company Assets</a>
+                                            <span class="ms-1 mb-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13" height="13" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M488.727 0H302.545c-12.853 0-23.273 10.42-23.273 23.273s10.42 23.273 23.273 23.273h129.997L192.999 286.09c-9.089 9.089-9.089 23.823 0 32.912a23.195 23.195 0 0 0 16.455 6.816 23.194 23.194 0 0 0 16.457-6.817L465.455 79.458v129.997c0 12.853 10.42 23.273 23.273 23.273s23.273-10.42 23.273-23.273V23.273C512 10.42 501.58 0 488.727 0z" fill="#ffffff" opacity="1" data-original="#000000" class=""></path><path d="M395.636 232.727c-12.853 0-23.273 10.42-23.273 23.273v209.455H46.545V139.636H256c12.853 0 23.273-10.42 23.273-23.273S268.853 93.091 256 93.091H23.273C10.42 93.091 0 103.511 0 116.364v372.364C0 501.58 10.42 512 23.273 512h372.364c12.853 0 23.273-10.42 23.273-23.273V256c-.001-12.853-10.421-23.273-23.274-23.273z" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg></span>
+                                        </li>
+                                        <li class="d-flex justify-content-between px-3 py-2">
+                                            <a href="#" class="resAnchor text-decoration-none text-white fw-light" style="font-size: 14px;">About Netflix</a>
+                                            <span class="ms-1 mb-1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13" height="13" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M488.727 0H302.545c-12.853 0-23.273 10.42-23.273 23.273s10.42 23.273 23.273 23.273h129.997L192.999 286.09c-9.089 9.089-9.089 23.823 0 32.912a23.195 23.195 0 0 0 16.455 6.816 23.194 23.194 0 0 0 16.457-6.817L465.455 79.458v129.997c0 12.853 10.42 23.273 23.273 23.273s23.273-10.42 23.273-23.273V23.273C512 10.42 501.58 0 488.727 0z" fill="#ffffff" opacity="1" data-original="#000000" class=""></path><path d="M395.636 232.727c-12.853 0-23.273 10.42-23.273 23.273v209.455H46.545V139.636H256c12.853 0 23.273-10.42 23.273-23.273S268.853 93.091 256 93.091H23.273C10.42 93.091 0 103.511 0 116.364v372.364C0 501.58 10.42 512 23.273 512h372.364c12.853 0 23.273-10.42 23.273-23.273V256c-.001-12.853-10.421-23.273-23.274-23.273z" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg></span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- resource drop ends -->
+                            </button>
+
+                            <a class="anchorBtn rounded-1 text-white btn fw-medium bg-transparent py-1" style="border: 1px solid #ffffff66;">Apply</a>
+                            <a href="sign In.html" class="px-3 btn signin rounded-1 border-0 text-white fw-semibold text-nowrap text-decoration-none" id="signIn" style="background-color: #e50914; font-size: 0.9rem !important;">Press Log In</a>
+                    
+                        </div>
+
+
+                        <span class="mx-2" title="Open Search" id="svgSearch">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" x="0" y="0" viewBox="0 0 6.35 6.35" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(1.1700000000000017,0,0,1.1700000000000017,-0.5379181456565929,-0.5375339913368267)"><path d="M2.894.511a2.384 2.384 0 0 0-2.38 2.38 2.386 2.386 0 0 0 2.38 2.384c.56 0 1.076-.197 1.484-.523l.991.991a.265.265 0 0 0 .375-.374l-.991-.992a2.37 2.37 0 0 0 .523-1.485C5.276 1.58 4.206.51 2.894.51zm0 .53c1.026 0 1.852.825 1.852 1.85S3.92 4.746 2.894 4.746s-1.851-.827-1.851-1.853.825-1.852 1.851-1.852z" paint-order="stroke fill markers" fill="#ffffff" opacity="1" data-original="#000000"></path></g></svg>
+                        </span>
+
+                        <form class="blackSearchBar position-absolute top-0 end-0 d-flex flex-row align-items-center" id="blackSearchBar">
+                            <button class="sBtn"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="15" x="0" y="0" viewBox="0 0 6.35 6.35" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(1.1700000000000017,0,0,1.1700000000000017,-0.5379181456565929,-0.5375339913368267)"><path d="M2.894.511a2.384 2.384 0 0 0-2.38 2.38 2.386 2.386 0 0 0 2.38 2.384c.56 0 1.076-.197 1.484-.523l.991.991a.265.265 0 0 0 .375-.374l-.991-.992a2.37 2.37 0 0 0 .523-1.485C5.276 1.58 4.206.51 2.894.51zm0 .53c1.026 0 1.852.825 1.852 1.85S3.92 4.746 2.894 4.746s-1.851-.827-1.851-1.853.825-1.852 1.851-1.852z" paint-order="stroke fill markers" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg></button>
+
+                            <input type="text" class="bg-transparent border-0 text-white fw-light w-100" placeholder="Search">
+
+                            <a class="sBtn d-flex align-items-center justify-content-center closeBtn" onclick="closeBtn()"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" x="0" y="0" viewBox="0 0 329.269 329" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg></a>
+                        </form>
+
+                        <button class="navbar-toggler d-none" id="navbar-toggler">
+                            <span onclick="sideBarOpen()"><svg id="openSide" xmlns="http://www.w3.org/2000/svg" width="31" height="31" fill="white" class="bi bi-list" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg>
+                            </span>
+                            <span onclick="sideBarClose()" ><svg id="closeSide" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="16" x="0" y="0" viewBox="0 0 329.269 329" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg></span>
+                        </button>
+                    </div>
+
+                    
+
+                </div>
+
+                
+
+
+
+                <!-- media query srchbar starts -->
+
+                <form class="blackSearchBarMedia position-absolute top-0 end-0 d-flex flex-row align-items-center" id="blackSearchBarMedia">
+                    <button class="sBtn"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="17" x="0" y="0" viewBox="0 0 6.35 6.35" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(1.1700000000000017,0,0,1.1700000000000017,-0.5379181456565929,-0.5375339913368267)"><path d="M2.894.511a2.384 2.384 0 0 0-2.38 2.38 2.386 2.386 0 0 0 2.38 2.384c.56 0 1.076-.197 1.484-.523l.991.991a.265.265 0 0 0 .375-.374l-.991-.992a2.37 2.37 0 0 0 .523-1.485C5.276 1.58 4.206.51 2.894.51zm0 .53c1.026 0 1.852.825 1.852 1.85S3.92 4.746 2.894 4.746s-1.851-.827-1.851-1.853.825-1.852 1.851-1.852z" paint-order="stroke fill markers" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg></button>
+
+                    <input type="text" class="bg-transparent border-0 text-white fw-light w-100" placeholder="Search">
+
+                    <a class="sBtn d-flex align-items-center justify-content-center closeBtn" onclick="closeBtn()"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" x="0" y="0" viewBox="0 0 329.269 329" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg></a>
+                </form>
+
+                
+
+                <!-- media query srchbar ends -->
+
+
+
+
+
+
+
+
+                
+            </nav>
+
+
+
+
+            <!-- secondNav starts -->
+
+            <div class="container-fluid p-0 position-fixed top-0 start-0 px-3" id="navBarTwo">
+
+                <nav class="navbar container-fluid w-100 navbar-expand-lg bg-transparent py-4 d-flex align-items-center position-relative" >
+
+                    <span class="mx-2" title="Open Search" id="svgSearch2">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" x="0" y="0" viewBox="0 0 6.35 6.35" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(1.1700000000000017,0,0,1.1700000000000017,-0.5379181456565929,-0.5375339913368267)"><path d="M2.894.511a2.384 2.384 0 0 0-2.38 2.38 2.386 2.386 0 0 0 2.38 2.384c.56 0 1.076-.197 1.484-.523l.991.991a.265.265 0 0 0 .375-.374l-.991-.992a2.37 2.37 0 0 0 .523-1.485C5.276 1.58 4.206.51 2.894.51zm0 .53c1.026 0 1.852.825 1.852 1.85S3.92 4.746 2.894 4.746s-1.851-.827-1.851-1.853.825-1.852 1.851-1.852z" paint-order="stroke fill markers" fill="#ffffff" opacity="1" data-original="#000000"></path></g></svg>
+                    </span>
+
+
+                    <div class="d-flex align-items-center justify-content-center flex-column gap-2">
+                        <a href="index.html" class="navbar-brand d-flex m-0 justify-content-center align-items-center" style="max-width: 100% !important;">
+                            <img src="img/logo.png" id="nav2Logo" width="110" alt="">
+                        </a>
+
+                        <ul class="navbar-nav d-flex justify-content-center align-items-center">
+
+                        <li class="nav-item d-flex align-items-center px-2">
+                            <a class="fw-normal text-white fw-bold text-decoration-none" id="mc" aria-current="page" href="media.html"> Media Center</a>
+                        </li>
+                                    
+                        </ul>
+                    </div>
+
+
+                    <button class="navbar-toggler" id="navbar-toggler">
+                        <span onclick="sideBarOpen()"><svg id="openSide" xmlns="http://www.w3.org/2000/svg" width="31" height="31" fill="white" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg>
+                        </span>
+                        <span onclick="sideBarClose()"><svg id="closeSide" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="16" x="0" y="0" viewBox="0 0 329.269 329" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg></span>
+                    </button>
+
+                    <!-- srchbar2 starts -->
+                    <form class="blackSearchBarMedia2 position-absolute top-0 start-0 d-flex flex-row align-items-center" id="blackSearchBarMedia2">
+
+                        <a class="sBtn d-flex justify-content-center align-items-center"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="19" x="0" y="0" viewBox="0 0 6.35 6.35" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(1.1700000000000017,0,0,1.1700000000000017,-0.5379181456565929,-0.5375339913368267)"><path d="M2.894.511a2.384 2.384 0 0 0-2.38 2.38 2.386 2.386 0 0 0 2.38 2.384c.56 0 1.076-.197 1.484-.523l.991.991a.265.265 0 0 0 .375-.374l-.991-.992a2.37 2.37 0 0 0 .523-1.485C5.276 1.58 4.206.51 2.894.51zm0 .53c1.026 0 1.852.825 1.852 1.85S3.92 4.746 2.894 4.746s-1.851-.827-1.851-1.853.825-1.852 1.851-1.852z" paint-order="stroke fill markers" fill="#ffffff" opacity="1" data-original="#000000"></path></g></svg></a>
+
+                        <input type="text" class="bg-transparent border-0 text-white fw-light w-100" placeholder="Search">
+
+                        <a class="sBtn d-flex justify-content-center align-items-center closeBtn" onclick="closeBtn()"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" x="0" y="0" viewBox="0 0 329.269 329" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg></a>
+                    </form>
+                    <!-- srchbar2 ends -->
+
+                </nav>
+            </div>
+
+            <!-- secondNav ends -->
+
+
+            
+
+
+        </header>
+
+
+        <!-- english dropdown starts -->
+
+        <div class="container-fluid p-0 d-flex flex-column position-absolute" id="englishDropdown">
+            <div class="container-fluid p-0" id="langHeader">
+                <h5 class="text-white text-center position-relative fw-semibold">What language do you speak?
+                <button onclick="closeLangDrop()" class="btn langBtnClose position-absolute end-0 top-0"><svg id=" " xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" x="0" y="0" viewBox="0 0 329.269 329" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg></button></h5>
+            </div>
+            <div class="container-fluid p-0 d-flex justify-content-center" id="langListMain">
+                <div class="languageList d-flex flex-wrap flex-column position-relative">
+                    <a class="langAnchor" href="#">اللغة العربية</a>
+                    <a class="langAnchor" href="#">简体中文</a>
+                    <a class="langAnchor" href="#">繁體中文</a>
+                    <a class="langAnchor" href="#">English</a>
+                    <a class="langAnchor" href="#">Français</a>
+                    <a class="langAnchor" href="#">Deutsch</a>
+                    <a class="langAnchor" href="#">Ελληνικά</a>
+                    <a class="langAnchor" href="#">Bahasa Indonesia</a>
+                    <a class="langAnchor" href="#">Italiano</a>
+                    <a class="langAnchor" href="#">日本語</a>
+                    <a class="langAnchor" href="#">한국어</a>
+                    <a class="langAnchor" href="#">polski</a>
+                    <a class="langAnchor" href="#">Português (Brasil)</a>
+                    <a class="langAnchor" href="#">Português (Portugal)</a>
+                    <a class="langAnchor" href="#">română</a>
+                    <a class="langAnchor" href="#">Español (LatAm)</a>
+                    <a class="langAnchor" href="#">Español (España)</a>
+                    <a class="langAnchor" href="#">ไทย</a>
+                    <a class="langAnchor" href="#">Türkçe</a>
+                </div>
+            </div>
+        </div>
+
+    <!-- english dropdown ends -->
+
+
+        <!-- country dropdown starts -->
+
+        <div class="container-fluid p-0 d-flex flex-column position-absolute" id="countryDropdown">
+            <div class="continer fluid p-0" id="countHeader">
+                <h5 class="text-white text-center position-relative fw-semibold">What Country do you cover?
+                <button onclick="closeCountDrop()" class="btn langBtnClose position-absolute end-0 top-0"><svg id=" " xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" x="0" y="0" viewBox="0 0 329.269 329" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg></button></h5>
+            </div>
+            <div class="container-fluid p-0" id="countMain">
+                <div class="container countInner position-relative text-white">
+                    <p style="font-size: 14px;" class="fw-lighter text-center p-0">Select a country to see information specific to your coverage region.</p>
+
+                    <div  class="countSelect rounded-1 m-auto d-flex justify-content-between align-items-center position-relative px-4" onclick="countSelectOpen()">
+                        <span><span class="text-white fw-light" id="countrySpan">India</span></span>
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 320 512"><path fill="white" d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg></span>
+
+                        <div class="countrySelector position-absolute top-0 start-0 rounded-3" id="countSelectDrop">
+                            <div id="countrySelectorInner">
+                                <div class="countSearch">
+                                    <form class="d-flex align-items-center gap-2">
+                                        <button class="btn p-0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" x="0" y="0" viewBox="0 0 6.35 6.35" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(1.1700000000000017,0,0,1.1700000000000017,-0.5379181456565929,-0.5375339913368267)"><path d="M2.894.511a2.384 2.384 0 0 0-2.38 2.38 2.386 2.386 0 0 0 2.38 2.384c.56 0 1.076-.197 1.484-.523l.991.991a.265.265 0 0 0 .375-.374l-.991-.992a2.37 2.37 0 0 0 .523-1.485C5.276 1.58 4.206.51 2.894.51zm0 .53c1.026 0 1.852.825 1.852 1.85S3.92 4.746 2.894 4.746s-1.851-.827-1.851-1.853.825-1.852 1.851-1.852z" paint-order="stroke fill markers" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg></button>
+                                                    <input type="text" class="bg-transparent countInput border-0 text-white fw-light w-100 mt-1" placeholder="Search">
+                                    </form>
+                                </div>
+                                            
+                                <div class="countList">
+                                    <ul class="list-unstyled py-2 pe-0" id="countUl">
+                                        <li class="innerList ps-4"><span class="text-white">
+                                        <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                        India</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Afghanistan</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Åland Islands</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Albania</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Algeria</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            American Samoa</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Andorra</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Bahamas</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Bangladesh</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Belize</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Bermuda</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Bosnia</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Comoros</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Cook Islands</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Costa Rica</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Curaçao</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Czechia</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            France</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            French Polynesia</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Gambia</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Georgia</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Ghana</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Heard</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Ireland</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Israel</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Italy</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Kenya</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Kyrgyzstan</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Lesotho</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Maldives</span>
+                                        </li>  
+                                                    
+                                        <li class="innerList ps-4"><span class="text-white">
+                                            <svg id="tickMark" viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Martinique</span>
+                                        </li>  
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- country dropdown ends -->
+        
+        <!-- navbar ends -->
+
+        
+        <!-- sidebar starts -->
+
+            <div class="position-fixed start-0 top-0 overflow-y-auto overflow-x-hidden" id="sideBar">
+                <aside>
+                    <div class="sideBar d-flex flex-column flex-nowrap">
+
+                        <div class="sideHead px-4 py-4 d-flex justify-content-between align-items-center">
+                            <div class="d-flex">
+                                <a href="index.html" class="navbar-brand d-flex m-0 justify-content-center align-items-center" style="max-width: 100% !important;">
+                                    <img src="img/logo.png" width="110" alt="">
+                                </a>
+        
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+                                <li class="nav-item d-flex align-items-center px-2">
+                                    <a class="fw-normal text-white fw-bold text-decoration-none" aria-current="page" href="media.html"> Media Center</a>
+                                </li>
+                                            
+                                </ul>
+                            </div>
+
+                            <span onclick="sideBarClose()" id="closeSideInner"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="16" x="0" y="0" viewBox="0 0 329.269 329" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg></span>
+                        </div>
+
+                        <div class="sideButtons d-flex w-100 gap-3 px-2 py-3">
+                            <button class="sideBtn bg-transparent text-white fw-semibold p-2 px-3 rounded-1 w-50"><span id="sideBtnSpan" class="text-white">English</span></button>
+                            <button class="sideBtn bg-transparent text-white fw-semibold p-2 px-3 rounded-1 w-50 d-flex justify-content-center gap-2 align-items-center"><span id="sideBtnSpan"><span class="textSymbol text-white fw-bold">IN</span><span class="text-white">India</span></span></button>
+                        </div>
+
+                        <div class="sideList">
+                            <ul class="list-unstyled">
+                                <li class="p-3 fw-semibold text-white sideListItems">Home</li>
+                                <li class="p-3 fw-semibold text-white sideListItems d-flex align-items-center justify-content-between">Newsroom
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13" height="13" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M488.727 0H302.545c-12.853 0-23.273 10.42-23.273 23.273s10.42 23.273 23.273 23.273h129.997L192.999 286.09c-9.089 9.089-9.089 23.823 0 32.912a23.195 23.195 0 0 0 16.455 6.816 23.194 23.194 0 0 0 16.457-6.817L465.455 79.458v129.997c0 12.853 10.42 23.273 23.273 23.273s23.273-10.42 23.273-23.273V23.273C512 10.42 501.58 0 488.727 0z" fill="#ffffff" opacity="1" data-original="#000000" class=""></path><path d="M395.636 232.727c-12.853 0-23.273 10.42-23.273 23.273v209.455H46.545V139.636H256c12.853 0 23.273-10.42 23.273-23.273S268.853 93.091 256 93.091H23.273C10.42 93.091 0 103.511 0 116.364v372.364C0 501.58 10.42 512 23.273 512h372.364c12.853 0 23.273-10.42 23.273-23.273V256c-.001-12.853-10.421-23.273-23.274-23.273z" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg>
+                                </li>
+                                <li style="color: rgb(255 255 255 / 60%) !important;" class="p-3 fw-semibold text-white sideListItems d-flex align-items-center justify-content-between">Resources <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                                  </svg></li>
+                            </ul>
+                        </div>
+
+                        <div class="sideLogin d-flex flex-column p-3 gap-lg-3">
+                            <a href="sign In.html" class="px-3 btn py-2 signin rounded-1 border-0 text-white fw-semibold text-nowrap text-decoration-none" id="signIn" style="background-color: #e50914; font-size: 0.9rem !important;">Press Log In</a>
+                            <a class="anchorBtn rounded-1 py-2 text-white btn fw-medium bg-transparent py-1" style="border: 1px solid #ffffff66;">Apply</a>
+                        </div>
+
+                    </div>
+                </aside>
+            </div>
+
+        <!-- sidebar endts -->
+
+       
+
+
+        <!-- main section starts -->
+        <div class="container-fluid p-0 d-flex flex-column align-items-center w-100 bg-transparent" id="secondContainer">
+
+            <!-- hero section starts -->
+            
+            <section class="heroSection container-fluid p-0">
+                <div class="container-fluid p-0 d-flex justify-content-center flex-column align-items-center text-center" id="heroSectionInner">
+                    <h1 class="display-6 fw-semibold text-white">Discover stories and experiences to share with India.</h1>
+
+                    <form class="form mb-3 w-100 my-4 pb-3" id="formSearchBar">
+                        <div class="searchControlWrapper w-100">
+                            <button class="btn position-absolute opacity-75"><svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="#fff">
+                            <path fill-rule="evenodd" d="M11 18a7 7 0 10-7-7 7 7 0 007 7zm7-1.38l3.68 3.67-1.42 1.42L16.62 18A9 9 0 1118 16.62z"/>
+                            </svg></button>
+                            <input type="text" class="inputControl text-white fw-light w-100 bg-transparent" placeholder="Search for Netflix titles and news">
+                        </div>
+                    </form>
+                </div>
+
+                
+            </section>
+            
+
+            <!-- hero section ends -->
+
+            <!-- films div starts -->
+
+            <div class="container-fluid p-3" id="filmSection">
+                <div class="container-fluid p-0 p-2 py-3">
+                    <div class="filmHead d-flex gap-2 align-items-center position-relative flex-wrap">
+                        <h3 class="fw-bold text-white mt-1">I'm interested in covering titles releasing in</h3>
+                        <button class="btn position-relative monthBtn d-flex justify-content-center align-items-center gap-1" id="monthButton">
+                            <span class="text-white fw-bold fs-4" id="monthSpan">March</span>
+                            <svg id="chevDown" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 320 512"><path fill="white" d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
+
+
+                            <div class="monthSelect position-absolute rounded-1" id="monthList">
+                                <ul class="list-unstyled m-0">
+                                    <li class="d-flex py-2 px-3 align-items-center monthListItem" id="january">
+                                        <svg id="tickMark" class="me-1" viewBox="0 0 24 24" width="15" height="15" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        <a class="monAnchor text-decoration-none text-white fw-light" style="font-size: 14px;">January</a>
+                                    </li>
+                                    <li class="d-flex py-2 px-3 align-items-center monthListItem" id="february">
+                                        <svg id="tickMark" class="me-1" viewBox="0 0 24 24" width="15" height="15" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        <a class="monAnchor text-decoration-none text-white fw-light" style="font-size: 14px;">February</a>
+                                    </li>
+                                    <li class="d-flex py-2 px-3 align-items-center monthListItem" id="march">
+                                        <svg id="tickMark" class="me-1" viewBox="0 0 24 24" width="15" height="15" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        <a class="monAnchor text-decoration-none text-white fw-light" style="font-size: 14px;">March</a>
+                                    </li>
+                                    <li class="d-flex py-2 px-3 align-items-center monthListItem" id="april">
+                                        <svg id="tickMark" class="me-1" viewBox="0 0 24 24" width="15" height="15" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        <a class="monAnchor text-decoration-none text-white fw-light" style="font-size: 14px;">April</a>
+                                    </li>
+                                    <li class="d-flex py-2 px-3 align-items-center monthListItem" id="may">
+                                        <svg id="tickMark" class="me-1" viewBox="0 0 24 24" width="15" height="15" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        <a class="monAnchor text-decoration-none text-white fw-light" style="font-size: 14px;">May</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </button>
+
+                        
+                        
+
+                    </div>
+
+                    <div class="filmButton p-0 mt-2 d-flex justify-content-start align-items-center gap-2">
+                        <button class="btn py-2 d-flex justify-content-center align-items-center rounded-1" id="filmBtn" style="background: #4E4E4E;"><svg class="me-1" viewBox="0 0 24 24" width="17" height="17" fill="#ECECEC"><path fill="none" d="M0 0h24v24H0z"></path><circle cx="8.95" cy="9" r="2"></circle><circle cx="8.95" cy="15" r="2"></circle><circle cx="11.95" cy="12" r="1"></circle><circle cx="14.95" cy="15" r="2"></circle><circle cx="14.95" cy="9" r="2"></circle><path d="M12 2a10 10 0 00-6 18H2v2h10a10 10 0 000-20zm0 18a8 8 0 118-8 8 8 0 01-8 8z"></path></svg><span class="fw-medium filmText">Films</span></button>
+
+                        <button class="btn py-2 d-flex justify-content-center align-items-center rounded-1" id="filmBtn" style="background: #4E4E4E;"><svg class="me-1" viewBox="0 0 24 24" width="17" height="17" fill="#ECECEC"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M19 6V4h-4V2H1v20h14v-2h4v-2h4V6zm-6 14H3V4h10zm4-2h-2V6h2zm4-2h-2V8h2z"></path><path d="M6 10v4l4-2-4-2z"></path></g></svg><span class="fw-medium filmText">Series</span></button>
+
+                        <button class="btn py-2 d-flex justify-content-center align-items-center rounded-1" id="filmBtn" style="background: #4E4E4E;"><svg class="me-1" viewBox="0 0 24 24" width="17" height="17" fill="#ECECEC"><path fill-rule="evenodd" d="M3 3h18v18H3V3zm16 12V9H5v6h14zm0-8V5h-2v2h2zm-6-2h2v2h-2V5zM5 5v2h2V5H5zm6 2H9V5h2v2zm8 10v2h-2v-2h2zm-4 0h-2v2h2v-2zM5 19v-2h2v2H5zm4 0h2v-2H9v2z" clip-rule="evenodd"></path></svg><span class="fw-medium filmText">Documentary</span></button>
+
+                        <button class="btn py-2 d-flex justify-content-center align-items-center rounded-1" id="filmBtn" style="background: #4E4E4E;"><svg class="me-1" viewBox="0 0 24 24" width="17" height="17" fill="#ECECEC"><g clip-path="url(#clip0)"><path fill-rule="evenodd" d="M5.455 10.422c1.527 0 2.836-1.25 2.836-2.71S6.98 5 5.455 5C3.927 5 2.618 6.251 2.618 7.711s1.31 2.711 2.837 2.711zm0-3.754c.654 0 1.09.418 1.09 1.043 0 .626-.436 1.043-1.09 1.043-.655 0-1.091-.417-1.091-1.043 0-.625.436-1.043 1.09-1.043zM21.382 7.711c0 1.46-1.31 2.711-2.837 2.711-1.527 0-2.836-1.25-2.836-2.71S17.02 5 18.545 5c1.528 0 2.837 1.251 2.837 2.711zm-1.746 0c0-.625-.436-1.043-1.09-1.043-.655 0-1.091.418-1.091 1.043 0 .626.436 1.043 1.09 1.043.655 0 1.091-.417 1.091-1.043zM14.836 9.797c0 1.46-1.309 2.711-2.836 2.711s-2.836-1.251-2.836-2.711S10.473 7.086 12 7.086s2.836 1.25 2.836 2.71zm-1.745 0c0-.626-.436-1.043-1.091-1.043s-1.09.417-1.09 1.043c0 .625.435 1.043 1.09 1.043s1.09-.418 1.09-1.043z" clip-rule="evenodd"></path><path d="M13.964 14.28c.981-1.46 2.618-2.398 4.582-2.398 3.054 0 5.454 2.295 5.454 5.214h-2.182c0-1.772-1.418-3.128-3.273-3.128-1.2 0-2.181.626-2.727 1.46.982.938 1.636 2.294 1.636 3.754h-2.181c0-1.773-1.418-3.128-3.273-3.128-1.854 0-3.273 1.355-3.273 3.128H6.545c0-1.46.655-2.816 1.637-3.754a3.245 3.245 0 00-2.727-1.46c-1.855 0-3.273 1.356-3.273 3.128H0c0-2.92 2.4-5.214 5.455-5.214 1.963 0 3.6.939 4.581 2.399A6.435 6.435 0 0112 13.968c.655 0 1.31.104 1.964.313z"></path></g></svg><span class="fw-medium filmText">Kids</span></button>
+
+                        <button class="btn py-2 d-flex justify-content-center align-items-center rounded-1" id="filmBtn" style="background: #4E4E4E;"><svg class="me-1" viewBox="0 0 24 24" width="17" height="17" fill="#ECECEC"><path fill="none" d="M0 0h24v24H0z"></path><path fill-rule="evenodd" d="M18 9V6H1v12h17v-2.95L23 17V7zm-2 7H3V8h13zm5-2l-3-1v-2l3-1z"></path></svg><span class="fw-medium filmText">Reality</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- films div ends -->
+
+
+            <!-- movie cards starts -->
+
+            <div class="container-fluid" id="cardMain">
+                <div class="container my-5">
+
+                    <!-- february -->
+                    <div class="container-fluid p-0" id="febCard">
+                        <div class="row gap-5 justify-content-center">
+                            
+                            <div class="card bg-transparent overflow-hidden border-0 text-start rounded-0 p-0" id="card">
+                                <img class="card-img-top rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABdIR7Nesl9Zn8uijqRbgO4xf7SbAmbPQe4G00OiQKkONUak_eg8l7vtAufyI3iCe0T-e_6lC_GUOcNnqm51wOCzaaw98Ck51B508PAfBhjHnYmxi69sTBlLgfTTO720rOhp_YQ.jpg?r=50d" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 2, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="card-img-top rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABZ9F1YDhtaPx3SNidaSNGdzY2MywiMiO5MCLAF7lfVIkaHO_Q2v82xPbRQOCTrnXQgR7EiY-NNHc8aLCevdsPKTcYYtbsZUZ7Mi6hJHlxwmTkShj6fq1XJxqA6CMC0_Jasf5bw.jpg?r=05a" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 2, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card cardR bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <div class="bg-black" style="height: 21rem;">
+                                <img class="card-img-top rounded-0" src="https://d2ajy4iry6zk4j.cloudfront.net/pubvat/81330942/thumbnail/small/f33ak3db4" alt="Title" />
+                                </div>
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 7, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABW4KzKZCF44MHOQc1-qFsMDdHzxKGexSPjjRerEEH8iATkd9iPLh_CJnIsdnNYWLSzhnQGEfMQOSu0ayqpEGWHa9DeTb7iCE0IgwgOwbNRz5ie_wjWjqwjkRZi1swMVsVUBO-Q.jpg?r=5df" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                </div>
+                            </div>
+
+                            
+
+                            
+
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABTRKVS6UCXCl9omgOo5NZ8Ah9UWw6my2ublkVbsTCV9HrDImqpsKT2WVLm0DTXlnt2vNX_D8rFaG7ojdiQcNEKCTp8cIIile5s6Xu-_rX7s9zSimb6lPXUShuIHK3UA6_hzzAw.jpg?r=9bd" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABQaWHKjzvxUbdBCetC4bT6MPwl1_-3HRIWnuy2X7ZQgMfDmn5oOT0rXRFXM79qHQfvr2aEKtxVNjgPUiVvVUQBpUOgVTBX3xlYz66ICR7bRHamrOKmWQuvOSZFZKCIfP48dG5Q.jpg?r=db5" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABaMzfjhkMJ9WbiZmbqXBcjNEvTbp5SfMs6XXB-Kd3jNK1mYPpyhqZZr676XRZE2vNLE3gR5CoRyJwtTPHhwoDlpF9KzetFw8S74PLLB6r864LcZPvaSbl8sq-fpl_PXPTbVvfA.jpg?r=e0d" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABa00f9BhAsKuz7gLiHEVZJuGHW3jM72tiYf7sL7uvC6eV4Dkmo-MzuN5mpOC7c97j9kTa2eAWmrY4Tmu0v4VTmAs5C0s57Scj5h6-HGq98xBQu5SKD7Tit29RqyrQl41GVvGZg.jpg?r=60e" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                </div>
+                            </div>
+                            
+
+                            
+
+
+
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABdxyWANUgBTVD1Zq6zziueU0zklx1sMfr3DWDO3naucbGexfcM9UYqGB8HYH48ycNlooBlECCTjpB6Y9os2U8dFm7IF838W3NW1Suj0KSujk4v9dItllGQi_gYwGBGNWUT5uEw.jpg?r=cfa" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABRsn-Dee0cgjhtBmr2A-QYkTEmb3xlGwt48C9l9opaNRRx059eWboLYWnj1JbGTpq_b7Be-gTxmJ6KnQgQAUnG0Cbgr9gUGEW_n5ahLU136mPqCiF3cjBotJ3cv-9IAY45kNVg.jpg?r=06e" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABXawCZZNtArW7wT6dOFkg4vOJUvowUhKHbbyDwI0tjPqkcKyjf3hb2ORPWdLD3BhmtNe8yzRlY9qpblnLygTDRIJrMD60EVpO6ZFe7vkPJ4O_b3tbRo8p5nlC1d9wN2LDVFkiw.jpg?r=d0f" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABVrajHK87X3eI1UqL4rtQlQMyzLStnUKk9SCTpGCF-pICXPO6Shudhss4_1ofoWYlHEWGgZSwZt9UbnTqqmuklruj6XbRbAPl756f0nLvW3HlvgI5MpTSn4Dk9Lin02RbxiP0A.jpg?r=cd6" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                </div>
+                            </div>
+                            
+
+                            
+
+
+
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABY00D16PWECyqTXFkss11JpEAEfRL-oBZqfb7RpkjvqZYnt2zvpNh-_w-EiaemyNw3hR5JDuCR3lf2vq3lnYJN1nviETtzpu_IuWEGMLq2b06Lwky2VdR89GXCtzmIxWp8r81A.jpg?r=c60" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABSqhs3xvscNdeCTdsGkgaZsE3IoXicj64Uv3Un0BJK4phtfJGRdbzNVVh8Drd6ZXjggzkRcs7wjudgcJDh2GGOz_cm217v0z4dC10THAXbXH3ZLLDd6s9f__15Mj3oeDr2pZeg.jpg?r=176" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABcPEIbuKRDWbN9ULPzOOw5m2iwbHqi9F01IHe6moTty7CDOGZKZNUnI97v8VBS-N0sHhmI_hCoQWuFGuEZQU0uHU9Hdw-pSMnN4af0D5rQ-MrEXSKKUFU7IRukz7t_oJhN0y0w.jpg?r=dbd" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABbqTBlgcaRaconfD3BSMM6ErTkFSbs7yFx5Z1infOc33YbZMTJlrpmTdEQYw1neDBfWQ39-eEdv-4tcD5Airp0gMx0E4cZgvatLYRvFJ1VFLkCnLdTeYWAd34UxB3Kr4srcSjQ.jpg?r=360" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                </div>
+                            </div>
+                            
+
+                            
+
+
+
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABTVW9brXm03FRVMc_pGkwu0r1zzKu9hY-rrSLMlrkWyR1RoXScNpDif-s-F2nY1yDZs6YwLccFXHGADsl8uXtZvKlYtZaXhdEdTUvSovSOA_g1cA1fASeF9nNQn6vs6a9t0Asw.jpg?r=610" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABX-31ZKSdimyKx2Zyq9NZANgbciRmhyWTCQrt1eSZ1GSuZg43ZnTg_6j0yhvulJU2QOFPFdFuVmzSmCiosACb9PL3fgnAnsNBsT-AE724hFjdJPVyJh4H83ZKr9AGzGoAjrAAQ.jpg?r=b6d" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABcPXlpCRdSrBev-IcQ2idiDJNx-Djyx7DLC1uFYz-mXAqh1PW3qaQXQukDWjplAIm8a8dHlzfAJnO-fdzrKv3Isw0UiHFlTl1o8RrokdxEBPp2CYDW6DLboJ1S58fioh-sm6mw.jpg?r=47b" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABTC2OlBYW8xyl3MdhIpFbRthzFWaoEI0qnuqPJTUMqUGue3r9eRmD-J7Y4apc1JA1INOIwNAb1tnlhR6mbtr7jIh9hIgJUzIsPagFcAcr4B3_rdjePJo0slAvb3ByixSRQjwYQ.jpg?r=d93" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                </div>
+                            </div>
+
+
+                            
+
+                            <!-- component to show -->
+
+                            <div id="showHide">
+                                <div class="showHide row gap-5 justify-content-center">
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABV9ApRyVumXiuZaSZckV5VtF00bZ1Y14juluaRT5ZbX0gsAhjxNVUWlt88gHxYQn0nYleIABaoGJ0m4gWir2kg3y6Apl9VmolbUYowTRCrIf4kMOwqayRpHPhPLbXh49GAVUeg.jpg?r=441" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABRW--dmYpAWA8JVIXlxCFsf3ERdvCEwJZdp2RYbUYeL84gfWcvne1CoQTWFCUUW9Ggm4rMn5txwfhv4cuHSkjsfULAxjqEjnrLDGzmJ2Yfa5tQa_qGcWOiRagw0HCCmZAfvF2w.jpg?r=353" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABcQ3BQOaP8P4OmFsS9mh6fGAKgNLj-YdAXdemZMLbbcu5U-7cIGY_rBNbnyKVRUJj3ge2af29E8YvnHHw3EYb6qH4iQVX2hYiPBnqORRhnNwM05i2_0e50tB5iNHSXGIOWVUdQ.jpg?r=7ab" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABcZF_T1aWbAanokmedMb6Cqs1Nt66uHl96fqLCig0fU2jZX0ZHxKIp0TPAfDbsDNUloTIpVK8yvcpkT4PJ56yj7aEki8TwjIxOnTIaj6CBAPWMVTbjsWcQXKSwD4f_TVWNGw1w.jpg?r=d85" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                        </div>
+                                    </div>
+                                    
+
+                                    
+
+
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABWh7EkI4iPUT-4onBFI2u8vk_Qvkv6DRgNU3Y5CLXJyxoNbsj_udso8CJ6kGyBpgFCf0IZ6RtQKg1v7h3DK_8S2yqA5Xr5KuxRCB4NdqyqXDeORqr1VY0bNqSW3xXNd_yU1Gqg.jpg?r=bdc" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABdhUv__m5w3vaXRruK_G9PneElY2u32MSwp_Z18V_RmDoZ0F0DRvv3lM4J1r2Qe_nsqNzE0aL1hWczTD6jfNbwCX5XGSu7LriiyFMyZ40mN-EvG25bEbN--uzOdLx83Uy8HM_w.jpg?r=301" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABaxZMa7BUXNMP0Or4JDyGm55v3ouVpZEFCKb6QOisuL_PkPwy5z6Uy45QpbU3QtI1r2MjxqwyC11nSlszrjGgHtgOZwNbxOCYD6fB_VMRTeNC9bpeYlwV0LjRb1ol1MzNZkznQ.jpg?r=d54" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABalsF0L6OUBYn_VgMG4L5FGsbILV7O0W0SuTBtfiqaUoVnuWayuxIL0jbimf5o78lxeDy_9EJyzRfZcpYsmQr6mRFxfiYp1TzoovaE3QYsRAddAN_UZ7W7qKHmyONgTJyQ_--A.jpg?r=cfc" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                        </div>
+                                    </div>
+                                    
+
+
+
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABSH3rFMCg4mZUjMzyBw3DqFMVXbKv2Ik9KyDD_NeSk6uTRtVMBOAW9cASxKX5VZpAW25wZ9THQsmpClzaFGhAF57bJQlGSdDmmJWaO5wvQ51eOfFpSc3_F0mbhZhfdG5TCInyA.jpg?r=58a" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABSKCV9Y3qVgeDdMu2lJgGf97vVYrkrYhISz3wXIWMZJr2eAybIc8DtOVPH8CMXCLK_VCEhBc2qAT7qmr5WpYz1v0jXnT-Nm7eIswz_diMVsO7Oo6bj11e_JbzgO304z6Wo0TxA.jpg?r=bb3" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">February 8, 2024</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="showMoreBtn d-flex justify-content-center">
+                                <button id="showMoreBtn" class="bg-transparent text-white fw-semibold p-2 px-3 rounded-1"><span id="span1">Show 14 more in February</span><span id="span2">Show March Titles</span></button>
+                            </div>
+
+
+                        </div>   
+                    </div>
+
+                    <!-- march -->
+                    <div class="container-fluid p-0" id="marchCard">
+                        <div class="row gap-5 justify-content-center">
+                            
+                            <div class="card bg-transparent overflow-hidden border-0 text-start rounded-0 p-0" id="card">
+                                <img class="card-img-top rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABcHJl94d9EWd2ISADjCCtHu1Z8h2N9obA4p3KxqRQY3Mf3w23W5yRHWY7fpcKSFBCiTXnl_OZH9hz-ylAl6TVWEkSJ3s2Ja6ZLNSfLzi69FPe8NHVTlttQ18Grs6ughAtj7fvg.jpg?r=a13" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 2, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="card-img-top rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABakJakLc-WJ0AF4LCHlQWXow5fNHyHjCpJKLEv5e2YOPjyudQCdxHZW-GenpU8VyVOT5ysq6e6Io5X6-nLdg7cpgzSGBBb8wPKlnxt71D5dvunstzCiw05xHwsCRIKSL4JE_1g.jpg?r=87b" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 2, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card cardR bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="card-img-top rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABcNUH4wZmAAgvf6NvcdqC0gdZr5Y0kbyv5TJdgyq-X9FATHbswR7sTcTmB4yD9AWt-UNJqd2VB5mF42aby1gXLRBj3z__P7Wol35kyyhH5qW_5ZxEoL8epIn_O5FkfpMklphRg.jpg?r=9c8" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 7, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABeWVKze6-M0rsJWMNcxeu7Q42SNDz0rJyyJCt8lBM8gPrLkuyfSsWTWXsfti6LHtWS9uLZA6wOBmMfJWVlLzaGw0gWc-wwTLH105SCPvU6z4K02jJMdpcz4oI5RVnGaygCN68A.jpg?r=356" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                </div>
+                            </div>
+
+                            
+
+                            
+
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABZHsUO6PVumexy6wYTKwiewuSAaq3nzaGZ5MUxCtiVPsqxpYVqskK1WPxpNIzl-XsX84NzSNqZPb_RpLNSQT3MZi96-6cuNuLus6fxqbKN3gJVZQYaN4h_BmtdLeU4KvTTJOzw.jpg?r=157" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABV8o2YFY3CnpYsXbNj-C1ygaT_dDLvs2h6wC7NyuYZ_BcCMHMYtMFo_J4GLIMYEsR-U8GV4QnYbIc-F50yI33kdSLZ_W8A6jJxn84MBiiXpEhQ2K8wfHQIL9to3znqyhTY2noA.jpg?r=ad1" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABYWHaot5dI8LonGyuuQRW1o0_mM-4jTd37aoSm1bGCHJYFiW7dtEPSeTG3DyJuLGAwFzalFDANdxgJ-Xc26EgNZoExOADbxT_eB9xDNuChtsVZcW5U90uj9Bo432MXrzGFPjpw.jpg?r=331" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABdkvv3i4XAwECrsw6Q5f9mq8KGY0ozNZ-naGDFVcgvuQnLa_54m3Ano1BadB_SUka4HOdcdH7bR1_syI1c4WYeRKZ2G1-yVdIUCrgItyHodGnNtWtJbi4mFGBDWnnzow6bEJQg.jpg?r=543" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                </div>
+                            </div>
+                            
+
+                            
+
+
+
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABWhFn3E29dt1m4iXq230EPCe5VfR-sv7R5c-VgX1b9XCHUw-x1CB_N4I6fp3ti6aw424VPkKDzgdKEb6Kck0gGRd7VbABD2q8LiUVDm2Rz8F_a7tzCHNmbtTEXk0pQ3IdTy7UA.jpg?r=191" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABesIBwNCBxAMl-O7frGmbqEnNouADH6U76V4-86xPGgbtwkQLSpLoy7VHruKQgcNl9kK3a1Rf5Jjr_CHv6Ckr7rlSCJPmleUo47ppTsWK3zeQgMD4S8LmXGpD7EzQPAZkOQ_fQ.jpg?r=7a4" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABffFL0PbMulz4M75Z8hwNjHM7DFQZcRjirkL9JJkBjsemxAoA3klyRs7j1WIXY5IQKFvXtLZQ6xj8pGfM9p2e6MhAq6-f4uM0FNg5ku0xum8l9tBKuoSHczYqLLxXE_uAVbDsQ.jpg?r=dbf" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABVxjWRSAcT_MwCdVQmIKE3qagM4btHmYaAOPicXgkA5z_VBQGFg9eJyj0br1qQD6Rtz8nYW3zCnsBWd_cDINUg4QNBX-OGTdHF74L7NX7sEi2VOQUyxztpB8WXIPuHez9qhP2A.jpg?r=ecc" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                </div>
+                            </div>
+                            
+
+                            
+
+
+
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABSPLnNQVyNWZHME0TkwkzBdAEjfljNAvRzkw8mfWyJ62d-D8EJQAc7wPzxRwcDXmbv4dkF7J69xLvCrwwaszvsHppjOeff4D74WtYxsljhzVwqJDIvg-mQFgb7DqaaaWUNV78A.jpg?r=4d2" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABS8Y2rDrQspuHgV0Jiyka5e-wAtAg0-TVKUdSMSnFyvT29rRhJ2uTh6-w4RHU1nu9qSw0jmlvVVDHHNWB3sV-YgI0XRzhoa6j_l8t7h7mn8cj0EVCxbAbd-e0dMU11D8xoyNIw.jpg?r=d32" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABYmwc_qc_N-KQOMh1J14-Ue_TIU2LkIHuaLfb52G1OqzjMopxAoYxj-wGUgCzr9eI9D-xm-3dLnDcH-bHntIdAIzN4suabankM-Q6aS8o8LN0pViNThVODdFQBLicAWA1NH67w.jpg?r=dea" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABZxNOySBWusxW3vK2BtLn2RfaqrPJpxEoZn3soQtbEggOlzsrQxoC4SkAhhbblpbxKum-TgaP7gF2bLMhfn5_9FuCms_sWq3C5v0DHZFsi_FJsRczZ8TKavXqeAN1NI7i-QSPw.jpg?r=3ee" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                </div>
+                            </div>
+                            
+
+                            
+
+
+
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABRvrNUxz3K5teieCvlX9ZGan2XDBZfA2ksHhTuFzM0nlL1SDJ5LlLgfoQE65VtTLf7x-EQNsj4s4Jvdjzikq7f-fLnRjoa0EkU_6F8A_hYdmxGpagXODAiy9O6uW5rorqSgVVQ.jpg?r=e58" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABfZNvt_4wf1_P-yftXn4xBzfVtAN9S-moW-EUK3ZJJAWlsvVw_WwxrNxSDZGblBTAxidUOLRSnFrVnqGg0XBPeXuq_Q1_TBjtFAo4fG3NmZne6T8k_CHm_HK6TD_vcncEJbEWw.jpg?r=c5e" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABZ00zM8dooFwzjEZr8w7uQ-MvNyYXzfPjiQNiVZDYcmjCmE8fYk2FsvL_08PBkz05EzIIZ3C9cFaKD2ABMw714H_6re_6bkhYsZPPa1TFyhpvJwy0ftO0Uvk_xnE9vUik6h2OQ.jpg?r=779" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABQo7EbCT1-kyN-7xlboABurNCPnN0WKFm5xnvdWYG6JOpw3JMjD_WT7XE2Do-0_-po5BPQBGtSmbZ5xldSOUdX4nt8UAQ7qu8ZtOG7jhYYwMkFOtS1uLLLFaSRIPkBgawKCKwQ.jpg?r=0e1" alt="Title" />
+                                <div class="card-body p-0 py-2">
+                                    <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                </div>
+                            </div>
+
+
+                            
+
+                            <!-- component to show -->
+
+                            <div id="showHide2">
+                                <div class="showHide row gap-5 justify-content-center">
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABairH5g4M7Drl_W2djKMDly1MQBYchczJDwDzDURzr2hKt-afh6n5PNX3OVwV0zNqqNrPj_5c8I846xVr4IN0yBy30YVcyZjALfkpS8pgH2UeDSFUyn5WUj81qe7FkhP9AY_7Q.jpg?r=fdb" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABffoq1hSor3m0ZFZlB37f4k64NmpU6ejxOoZXe-1IrGYRy11mjESqyzlNWtISv546Jske9fO71TFHNCrpmPp3DwLtPnv9lwHHTgQFljqqbCjs1e-Pn6vfibYAOm3k96qPpaY8A.jpg?r=196" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABUjILFlzxoE9BjIt_DJ-_xm5jP1zupsTE1LNlRsjzLiPUlQkHwSDiH-YRW9GpOHYbXL-B6mkChkbfvUgP0cGSv6XRCM3K3vu9mb4T9U1FTZlvbenHfo20fH1_jhKQhPBp3xfPQ.jpg?r=f25" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABZKo09Lw-k9RfB8tiPVAmugp0kspZT8cHUDyrBwwn5xWPlyBENZY-zZdVioamtPNZT3ApXjwhQcAI8L5L8jdf1bn2Ikssz6GGQtwga7j_c2jfvGn4_DQMK0pRXzCbzy8GTfVPg.jpg?r=a9b" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                        </div>
+                                    </div>
+                                    
+
+                                    
+
+
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABWgeu1pKLZZKZX5kTqp7UCX_mm9YgM4ABg9XBwOeo_88jXI2UEfvjJCdAaU-OMrDhtXwTbJlq1Fi2aCI83MXldQmqdIQhYE6Khbcg478-nIFDgebCFoNtxhvn9nuMxJpUnuSPA.jpg?r=822" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABarjYiIkuxV1WV7fXUOll7P_l4r8ITcYpw2TfKEh4fUFdzDwDUpeuYfJRxyXHurunmS-j61-Ys9XGNhnoyFrfngGhpfrA3JeYdc_rU7KSQG0FNzGcVCLg-IF4l6CERiQgC3A6A.jpg?r=971" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABV6ifocflLMwjevpuG91wn7GU6rqDyQckApGFFhodzvbrjC6-2br3otwJIKiv6t-bdFwdgSvZiFD3Qf1PnzlJ3JbF031GZbhMaMVQzCve3Ugp73i-7WU14KVTMIvR9DYaYXU4g.jpg?r=81e" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABYD38ROeSbhbaDqRMvtmBp0oUYe5A6G29la4xxs3M1ekGmmG9bhIMn6ueE_E1HIsfbZ_NTLSSXRF0lKuQg8OUWY3vFPV_zyzv0i6y8Fj0emq2y6gFwPeD9mswHZt1ZTLAbdhgA.jpg?r=63c" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                        </div>
+                                    </div>
+                                    
+
+
+
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABUMsWEAL2_HN6LNkTlajQHlu1WbFNaFBFNPfSFdEsAbAwZocnyg7NxuJuZUj8i2UMqX8VOAt6pf5IiPh8Hki07bVIczFiNbe8q-WskvoMtuZ2HEdsqVQYqocxlXJbYBSczsQtw.jpg?r=e57" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/Kc8CA9GHHouTKoU4bM9l5VW4DIA/AAAABc4wRgXkYkmhqroTdoh0hAGFOqEpfFxzr8M0Sd6oECaqyNUPiJ9hyHsszWikLZetFHHxtdbz789JEw26MQWSP4wwOKJuyqCIxtb0eIFtHpIl5dU4UWWxqfsn04F3xZ4CxdZtEv5GWFm3TvdtT4qcSbWyKdj0Z4ihWcl7ne9o2Gw.jpg" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABXDtyn63C6ko3R4fY1loJNFh1jmapES5H4_127monXLP--FmAf33VPmbsznXLkhLRPYHRL-UZboDJom42sDOdPDfW-sFFJwD3qoKOCbBKkMfXpK8BNT0frB1xcdKqyLCiO_9Dg.jpg?r=f34" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABUe1cLjEgz_78hgZduRtmoFkMPvmUURLrSJh74NithZN-wipsRI-7lv3nMOU-bl17Qv22IPWe4NcCMdooO8pVuzfJeU4kiZFuDy86L-y5jhgxU1wt-Ff0f9t73kuMAdtD31bGw.jpg?r=8fb" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                        </div>
+                                    </div>
+                                    
+
+
+
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://d2ajy4iry6zk4j.cloudfront.net/pubvat/81333845/thumbnail/small/fk8w75t74" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-transparent border-0 text-start rounded-0 p-0" id="card">
+                                        <img class="img-fluid rounded-0" src="https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABdFv4bas71KVgFeZijY69_eSsC47NeHv0l6dfOVllAEqkjD8EUUbiRLHpjXC_lkkJtXl9m4BbwXtXQL5gR8EJtYQNI3NoaZw2KkBbUXbVOYtfQ7Srei7OlDuPEKPkcQonF3VCg.jpg?r=0a8" alt="Title" />
+                                        <div class="card-body p-0 py-2">
+                                            <p class="card-text cardText text-white fw-light">March 8, 2024</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="showMoreBtn d-flex justify-content-center">
+                                <button id="showMoreBtn2" class="bg-transparent text-white fw-semibold p-2 px-3 rounded-1"><span id="span3">Show 14 more in March</span><span id="span4">Show April Titles</span></button>
+                            </div>
+
+
+                        </div> 
+                    </div>  
+                </div>
+            </div>
+
+            <!-- movie cards ends -->
+            
+        </div>
+        <!-- main section starts -->
+
+
+
+        <!-- latestNews starts -->
+
+        <div class="container-fluid p-0" id="latestNewsMain">
+            <div class="container-fluid p-0 py-5 ">
+                <div class="lnHead px-4">
+                    <h4 class="fw-bold text-white">Latest News</h4>
+                </div>
+                <div class="container-fluid p-0 my-5 px-4" id="latestNewsMainInner">
+                    <div class="container-fluid p-0 d-flex justify-content-between gap-4" id="boxMain">
+                        <div class="box">
+                            <div class="boxInner d-flex flex-column justify-content-center align-items-start gap-2">
+                                <span class="text-white fw-lighter" style="font-size: 12px;">United States, Global</span>
+                                <h4 class="text-white">True-Crime Docuseries, 'Homicide: New York', From the Creator of 'Law & Order,' Coming to Netflix on March 20</h4>
+                                <a class="btn rmAnchor rounded-1">Read More</a>
+                            </div>
+                        </div>
+
+                        <div class="vr"></div>
+
+                        <div class="box">
+                            <div class="boxInner d-flex flex-column justify-content-center align-items-start gap-2">
+                                <span class="text-white fw-lighter" style="font-size: 12px;">Saudi Arabia, Kuwait, Global</span>
+                                <h4 class="text-white">'Honeymoonish' Brings Together Nour AlGhandour and Mahmoud Boushahri for a Romantic Adventure on Netflix</h4>
+                                <a class="btn rmAnchor rounded-1">Read More</a>
+                            </div>
+                        </div>
+
+                        <div class="vr"></div>
+
+                        <div class="box thirdBox">
+                            <div class="boxInner d-flex flex-column justify-content-center align-items-start gap-2">
+                                <span class="text-white fw-lighter" style="font-size: 12px;">Global, Sweden, Denmark, Norway</span>
+                                <h3 class="text-white">New Seasons of the Norwegian Hit Drama Series 'Porni 'Will Launch on Netflix</h3>
+                                <a class="btn rmAnchor rounded-1">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rmBtn d-flex justify-content-center align-items-center">
+                    <a class="btn rmAnchor newRmAnchor rounded-1">Read more news in the Newsroom</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- latestNews ends -->
+
+
+
+        <!-- company assets starts -->
+
+        <div class="container-fluid p-0" id="assetsOuter">
+            <div class="container-fluid p-0 d-flex text-end flex-column gap-2" id="assetsMain">
+                <h2 class="text-white">Looking for company assets?</h2>
+                <p class="text-white fs-5 fw-lighter">Get more images and information about Netflix on our company site.</p>
+                <div class="rmBtn d-flex justify-content-end align-items-center">
+                    <a class="btn rmAnchor goAnchor rounded-1">Go to about Netflix</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- company assets ends -->
+
+
+
+        <!-- footer starts -->
+
+
+        <div class="container-fluid p-0 px-5 py-3 text-white" id="footMain">
+            <div class="container-fluid p-0">
+                <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-3 py-1" id="footer">
+              
+                  <div class="col-3 mb-3" id="colThreeFoot">
+                    <span id="footSpan">Company</span>
+                    <ul class="nav flex-column my-3 gap-2" id="footerUl">
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white fw-light">About Netflix</a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white fw-light">Nesroom</a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white fw-light">Company Assets</a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white fw-light">Start Watching</a></li>
+                    </ul>
+                  </div>
+              
+                  <div class="col-3 mb-3" id="colThreeFoot">
+                    <span id="footSpan">Connect</span>
+                    <ul class="nav flex-column my-3 gap-2" id="footerUl">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white fw-light">Contact Us</a></li>
+                        <li class="nav-item mb-2 d-flex gap-2">
+                            <a href="#" class="nav-link p-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-twitter" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/></svg>
+                            </a>
+                            <a href="#" class="nav-link p-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-instagram" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
+                            </a>
+                            <a href="#" class="nav-link p-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" x="0" y="0" viewBox="0 0 155.139 155.139" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M89.584 155.139V84.378h23.742l3.562-27.585H89.584V39.184c0-7.984 2.208-13.425 13.67-13.425l14.595-.006V1.08C115.325.752 106.661 0 96.577 0 75.52 0 61.104 12.853 61.104 36.452v20.341H37.29v27.585h23.814v70.761h28.48z" fill="#ffffff" data-original="#010002" opacity="1" class=""></path></g></svg>
+                            </a>
+                        </li>
+                    </ul>
+                  </div>
+              
+                  <div class="col-3 mb-3" id="colThreeFoot">
+                    <span id="footSpan">Legal</span>
+                    <ul class="nav flex-column my-3 gap-2" id="footerUl">
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white fw-lighter">Terms and Conditions</a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white fw-lighter">Privacy</a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white fw-lighter">Cookie Preferences</a></li>
+                  </div>
+                </footer>
+            </div>
+        </div>
+        
+
+        <!-- footer ends -->
+
+
+
+
+    </div>
+    <!-- js -->
+    <script src="media.js"></script>
+    <!-- bs5 js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>

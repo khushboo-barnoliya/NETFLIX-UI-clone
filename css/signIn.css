@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit' !important;
+    scroll-behavior: smooth !important;
+}
+
+*::selection{
+    background-color: #4C4948 !important;
+    color: white;
+    
+}
+
+#mainBg{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-image: cover;
+    overflow: hidden;
+}
+
+#signInner{
+    min-height: 650px;
+}
+
+#collapseDown{
+    visibility: hidden;
+}
+
+.form-control{
+    border: 1px solid rgb(94,96,96) !important;
+    overflow: hidden !important;
+}
+
+.form-control::placeholder{
+    user-select: none !important;
+}
+
+#inpLabel{
+    color: #B4B4B4 !important;
+    width: 80%;
+    
+}
+
+
+
+.form-control:focus {
+    color: #ffffff !important;
+    background-color: transparent !important;
+    border-color: #ffffff !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(252, 252, 252, 0.349) !important;
+}
+
+.form-floating>.form-control:focus~label {
+    font-size: 0.8rem !important;
+    font-weight: 100 !important;
+}
+
+.form-floating>.form-control-plaintext~label::after, .form-floating>.form-control:focus~label::after, .form-floating>.form-control:not(:placeholder-shown)~label::after, .form-floating>.form-select~label::after {
+    position: absolute;
+    inset: 1rem 0.2rem;
+    z-index: -1;
+    height: 1.5em;
+    content: "";
+    background-color: transparent !important;
+}
+
+.cbx {
+    position: relative;
+    top: 1px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #c8ccd4;
+    border-radius: 3px;
+    transition: all 0.1s ease;
+    cursor: pointer;
+    display: block;
+   }
+   
+   .cbx:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    width: 5px;
+    height: 10px;
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    transition: all 0.1s ease;
+   }
+   
+   .lbl {
+    margin-left: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+   }
+   
+   #cbx:checked ~ .cbx {
+    border-color: transparent;
+    background: white;
+   }
+   
+   #cbx:checked ~ .cbx:after {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+   }
+   
+   .cntr {
+    position: relative;
+   }
+   
+
+   
+   .hidden-xs-up {
+    display: none!important;
+   }
+
+   .anchorHov:hover{
+    text-decoration: underline !important;
+   }
+
+footer{
+    height: calc(100% - 760.5625px);
+}
+
+
+#footerUl li:active > a{
+    color: red !important;
+}
+
+#langDrop2.langDropShow2{
+    position: absolute;
+    display: block !important;
+}
+
+.langActive{
+    font-weight: bold;
+    background-color: rgb(216, 216, 216);
+
+}
+
+footer #langDrop2{
+    min-width: 8.8rem !important;
+    max-width: 8.8rem !important;
+}
+
+/* #langDrop2{
+    top: -220%;
+} */
+
+footer .col-3 {
+    flex: 0 0 auto;
+    width: 50.5%;
+}
+
+@media only screen and (min-width: 600px) {
+    #signInner{
+        max-width: 450px !important;
+    }   
+    
+    #mainBg .bgImg{
+        min-height: 100%;
+        min-width: 100%;
+        
+    }
+    .form-floating #inpLabel{
+        font-size: 1rem;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        
+    }
+}
+@media only screen and (max-width: 600px) {
+    #bgImg{
+        opacity: 0 !important;
+    }
+
+    #signInner{
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin-bottom: 0 !important;
+        border-bottom: 1px solid #B4B4B4;
+        justify-content: start !important;
+        min-height: 600px;
+    } 
+
+}
+
+@media only screen and (max-width: 1280px) {
+    #navbar{
+        padding: 0 !important;
+    }
+    #navbarInner{
+        margin: 0 16px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+@media only screen and (max-width: 900px) {
+    #navbarBrand img{
+        width: 7rem !important;
+    }
+    
+}
+@media only screen and (max-width: 1000px) {
+    #footerUl li{
+        width: 50% !important;
+    }
+    #footCont, #footInner{
+        padding: 0 !important;
+    }
+    
+}
+   

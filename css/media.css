@@ -1,0 +1,764 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit' !important;
+    scroll-behavior: smooth !important;
+    
+}
+*::selection{
+    background-color: #4C4948 !important;
+    color: white;
+    
+}
+html{
+    background-color: rgb(22, 22, 22);
+}
+
+/* header starts */
+
+#mainBg{
+    background-color: #23232338 !important;
+}
+
+#header{
+    z-index: 100;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgb(22, 22, 22) 100%);
+}
+
+.navRight button:focus{
+    border-color: transparent !important; 
+    outline: none;
+}
+.navRight button:hover{
+    background-color: rgb(255 255 255 / 10%);
+}
+
+.navRight button span{
+    font-size: 15px;
+}
+
+.textSymbol{
+    font-family: monospace !important;
+    font-size: 12px !important;
+}
+
+.signin:hover{
+    background-color: rgb(168, 4, 12) !important;
+}
+
+.anchorBtn:hover{
+    background-color: rgb(255 255 255 / 10%) !important;
+}
+
+#blackSearchBar{
+    height: 80px;
+    width: 0%;
+    transition: all 0.5s ease;
+}
+#blackSearchBar input:focus{
+    border: 0;
+    outline: 0;
+}
+
+#svgSearch, #closeBtn{
+    cursor: pointer !important;
+    transition: all 0.5s ease;
+}
+
+.sBtn{
+    color: white;
+    width: 8% !important;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    display: none;
+}
+
+.sBtn.opacityShow{
+    display: inline-block;
+}
+
+.sBtn:hover{
+    background-color: transparent !important;
+}
+
+@media only screen and (min-width: 1280px){
+    .blackSearchBar{
+        box-shadow: inset 0 -1px 0 rgb(41, 58, 127) !important;
+        background-color: rgb(35, 35, 35) !important;
+    }
+}
+
+#englishDropdown{
+    z-index: 15 !important;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.8s ease;
+}
+
+#langHeader{
+
+    background-color: rgb(35, 35, 35) !important;
+    padding: 130px 20px 30px 20px !important;
+}
+
+.languageList{
+    max-height: 24rem !important;
+    max-width: 1028px;
+    width: 100%;
+}
+
+.languageList > a{
+    text-decoration: none;
+    color: white;
+    padding: 1em 2em 1em calc(3em + 17px);
+    font-size: 14px;
+    font-weight: lighter;
+    position: relative !important;
+    display: flex;
+    justify-content: flex-start;
+}
+.languageList > a.paddingShow{
+    padding: 1em 2em;
+}
+.languageList > a:hover{
+    background-color: rgb(255 255 255 / 10%);
+    
+}
+
+.langBtnClose{
+    transition: all 0.5s ease;
+}
+
+.langBtnClose:hover{
+    background-color: rgb(255 255 255 / 10%) !important;
+}
+.langBtnClose:focus{
+    border-color: transparent !important;
+}
+
+#langListMain{
+    background-color: rgb(22, 22, 22);
+}
+
+#tickMark{
+    margin-right: 1em;
+    opacity: 0;
+}
+#tickMark.tickShow{
+    opacity: 1;
+}
+
+
+
+#countryDropdown{
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.8s ease;
+}
+
+#countHeader{
+    background-color: rgb(35, 35, 35);
+    padding: 130px 20px 30px 20px !important;
+}
+
+#countMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(22, 22, 22);
+}
+
+
+.countInner{
+    width: 100%;
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: column;
+    gap: 2px;
+    padding: 50px 0 80px;
+    background-image: url(/img/country-select-background\ \(1\).svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 80%;
+    background-position-y: bottom;
+}
+
+.countSelect{
+    width: 36%;
+    padding: 8px;
+    border: 1px solid #ffffff33;
+    background-color: rgb(255 255 255 / 4%);
+    cursor: pointer;
+}
+
+.countSelect:focus{
+    border-color: transparent !important;
+    outline: 2px solid #4969E4 !important;
+}
+.countrySelector{
+    width: 25rem;
+    border: 1px solid rgb(255 255 255 / 4%);
+    background-color: rgb(35, 35, 35);
+    margin-top: 3rem;
+    display: none;
+}
+
+.countrySelector.active{
+    display: block;
+}
+
+.countList{
+    max-height: 20rem;
+    overflow-y: scroll;
+}
+.countSearch > form{
+    padding: 5px 10px;
+    border-bottom: 1px solid rgb(255 255 255 / 20%);
+}
+
+
+.countInput:focus{
+    outline: none !important;
+}
+
+#countUl > li{
+    padding: 8px;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.innerList{
+    transition: all 0.3s ease;
+}
+
+.innerList.selected{
+    background-color: rgb(255 255 255 / 10%);
+}
+
+.innerList:hover{
+    background-color: rgb(255 255 255 / 10%);
+}
+
+
+/* header ends */
+
+/* hero starts */
+
+.heroSection{
+    width: 100%;
+    background-image: url(../img/streams-bg.png);
+    background-repeat: repeat-y;
+    background-size: 100%;
+}
+
+#heroSectionInner{
+    max-width: 35rem;
+    padding: 128px 16px 48px 16px !important;
+}
+
+/* searchbar section starts */
+
+.searchControlWrapper{
+    border-radius: 4px;
+}
+.inputControl{
+    padding: 7px 16px 7px 40px;
+    border-radius: 2px;
+    border: 1px solid #ffffff33;
+}
+
+.inputControl::placeholder{
+    color: rgba(255, 255, 255, 0.637);
+    font-size: 14px;
+}
+
+.inputControl:focus{
+    border-color: transparent;
+    outline: 2px solid #4969E4;
+}
+
+
+.search-section p, .search-section p > a{
+    color: rgb(0 0 0 / 70%) !important;
+}
+
+.search-section p > a:hover{
+    color: rgb(0, 0, 0) !important;
+}
+
+
+#resDrop{
+    width: 12rem;
+    max-width: 12rem !important;
+    background-color: rgb(45, 45, 45);
+    overflow: hidden;
+    top: 40px;
+    margin-left: -50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.644);
+    display: none;
+}
+
+#resDrop.resShow{
+    display: block;
+}
+
+#resDrop ul li:hover{
+    background-color: rgb(255 255 255 / 10%);
+}
+
+/* searchbar section ends */
+
+
+#filmSection{
+    background-color: rgb(22, 22, 22);
+    border-bottom: 1px solid #ffffff33;
+}
+
+.monthBtn:hover{
+    background-color: rgb(255 255 255 / 10%) !important;
+}
+.monthBtn:focus{
+    outline: 2px solid #4969E4 !important;
+}
+.monthBtn:focus #chevDown{
+    transform: rotate(180deg);
+}
+
+#monthList{
+    background-color: #232323;
+    top: -12rem;
+    left: -1rem;
+    width: 9rem;
+    max-width: 9rem;
+    z-index: 500;
+    display: none;
+}
+
+#monthList.monthListShow{
+    display: block;
+}
+
+#monthList ul li:hover{
+    background-color: rgb(255 255 255 / 10%) !important;
+}
+#monthList ul li:hover #tickMark{
+    opacity: 1;
+}
+
+.filmText{
+    color: #ececec;
+    font-size: 14px;
+}
+
+#filmBtn{
+    transition: all 0.3s ease;
+}
+#filmBtn:hover{
+    background-color: rgb(57, 82, 177) !important;
+}
+/* hero ends */
+
+/* cards starts */
+
+#cardMain{
+    background-color: rgb(22, 22, 22);
+}
+
+#card{
+    width: 15rem;
+    transition: all 0.5s ease;
+}
+#card:hover{
+    transform: scale(1.05);
+}
+.cardR{
+    width: 16.8rem;
+}
+.cardText{
+    font-size: 14px;
+}
+/* cards ends */
+
+#showHide{
+    display: none;
+}
+
+#showHide.visible{
+    display: block;
+}
+#showHide2{
+    display: none;
+}
+
+#showHide2.visible{
+    display: block;
+}
+
+
+#showMoreBtn{
+    border: 1px solid rgb(255 255 255 / 40%);
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+}
+#showMoreBtn:hover{
+    background-color: rgb(255 255 254 / 10%) !important;
+}
+#showMoreBtn2{
+    border: 1px solid rgb(255 255 255 / 40%);
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+}
+#showMoreBtn2:hover{
+    background-color: rgb(255 255 254 / 10%) !important;
+}
+
+#febCard, #marchCard{
+    animation: fadeIn 1s linear;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#febCard{
+    display: none;
+}
+
+#span1{
+    display: block;
+}
+
+#span2{
+    display: none;
+}
+#span3{
+    display: block;
+}
+
+#span4{
+    display: none;
+}
+
+#navbar-toggler{
+    border: none;
+}
+#navbar-toggler:focus{
+    box-shadow: none;
+}
+
+
+@media only screen and (max-width: 430px){
+    #nav2Logo{
+        max-width: 50% !important;
+    }
+    #mc{
+        font-size: 0.5rem;
+    }
+}
+@media only screen and (min-width: 1280px){
+    #sideBar{
+        display: none !important;
+    }
+    #blackSearchBarMedia{
+        display: none !important;
+    }
+}
+@media only screen and (max-width: 1280px){
+    #navRight{
+        display: none !important;
+    }
+
+    #navbar-toggler{
+        display: inline-block !important;
+    }
+    #blackSearchBar{
+        display: none !important;
+    }
+}
+
+#blackSearchBarMedia{
+    background-color: transparent;
+    height: 90px;
+    width: 0%;
+    backdrop-filter: blur(5px);
+    transition: all 0.5s ease;
+    right: 80px !important;
+    opacity: 0;
+}
+#blackSearchBarMedia input:focus{
+    border: 0;
+    outline: 0;
+}
+#blackSearchBarMedia input::placeholder{
+    color: rgba(255, 255, 255, 0.726);
+    font-weight: lighter !important;
+}
+
+
+
+
+#blackSearchBarMedia2{
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    transition: all 0.5s ease;
+    top: 0;
+}
+#blackSearchBarMedia2 input:focus{
+    border: 0;
+    outline: 0;
+}
+#blackSearchBarMedia2 input::placeholder{
+    color: rgba(255, 255, 255, 0.726);
+    font-weight: lighter !important;
+}
+
+/* .sBtn2{
+    color: white;
+    width: 8% !important;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    display: none;
+}
+
+.sBtn2.opacityShow2{
+    display: inline-block !important;
+}
+
+.sBtn2:hover{
+    background-color: transparent !important;
+} */
+
+#svgSearch2, #closeBtn{
+    cursor: pointer !important;
+    transition: all 0.5s ease;
+}
+
+#blbmMain{
+    display: none !important;
+}
+
+@media only screen and  (min-width: 991px){
+    #sideBar{
+        width: 50% !important;
+    }
+    #blbmMain{
+        display: block !important;
+    }
+}
+
+@media only screen and  (max-width: 400px){
+    #sideBar{
+        width: 100% !important;
+    }
+}
+
+@media only screen and  (max-width: 992px){
+    #navRight{
+        display: none !important;
+    }
+
+    #navbar-toggler{
+        display: inline-block !important;
+    }
+    #navBar{
+        display: none !important;
+    }
+    #navBarTwo{
+        display: block !important;
+    }
+    #closeSideInner{
+        display: inline-block !important;
+    }
+}
+
+#closeSideInner{
+    display: none;
+}
+
+#navBarTwo{
+    display: none;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgb(22, 22, 22) 100%);
+}
+
+/* sidebar starts */
+
+#sideBar{
+    z-index: 500;
+    pointer-events: none;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+}
+
+#openSide{
+    display: inline-block;
+}
+
+#closeSide{
+    display: none;
+}
+
+.sideBar{
+    width: 400px;
+    max-width: 100% !important;
+    height: 100vh !important;
+    pointer-events: all;
+    background-color: rgb(22, 22, 22);
+}
+
+.sideBtn{
+    font-size: 14px;
+    border: 1px solid rgb(255 255 255 / 40%);
+    transition: all 0.3s ease;
+}
+
+.sideBtn, .sideBtn > span{
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+}
+.sideBtn:hover{
+    background-color: rgb(255 255 254 / 10%) !important;
+}
+
+.sideButtons, .sideListItems{
+    border-bottom: 1px solid rgb(255 255 255 / 20%);
+}
+
+.sideListItems{
+    font-size: 18px;
+}
+
+/* sidebar ends */
+
+
+/* latestNews starts */
+
+#latestNewsMain{
+    background-color: #232323;
+    
+}
+
+#latestNewsMainInner{
+    overflow: auto;
+}
+
+#boxMain{
+    min-width: 1200px;
+}
+
+.box{
+    width: calc(35% - 3rem) !important;
+    height: 19rem;
+    background-image: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(5, 5, 5, 0.67) 44.01%, rgba(15, 15, 15, 0) 100%), url(https://images.ctfassets.net/4cd45et68cgf/1dfMR0nteyJACp2f4nCYcQ/24a5dc4ce5def971c1a559d42b69b09b/Netflix_Entertainment_Evergreen_2.jpg?w=552&h=367);
+    background-repeat:  no-repeat;
+    background-size: cover;
+    background-position: left;
+    min-height: 312px;
+    box-shadow: 0 0 15px black;
+    padding: 0 36px;
+    display: flex;
+    align-items: center;
+
+}
+
+.vr{
+    background-color: rgb(255 255 255 / 20%);
+}
+.vr {
+    display: inline-block;
+    align-self: stretch;
+    margin-top: -1rem;
+    width: 1px;
+    height: 21rem;
+    background-color: rgb(255 255 255 / 20%) !important;
+    opacity: 1 !important;
+}
+
+.rmAnchor{
+    background-color: transparent;
+    border: 1px solid rgb(255 255 255 / 40%) !important;
+    color: white !important;
+    font-weight: lighter !important;
+    font-size: 12px !important;
+    padding: 12px 15px !important;
+}
+.rmAnchor:hover{
+    background-color: rgb(255 255 255 / 10%) !important;
+}
+
+.newRmAnchor{
+    font-size: 14px !important;
+}
+/* latestNews ends */
+
+
+/* company assets starts */
+
+#assetsOuter{
+    background-image: url(../img/company_assets_bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+#assetsMain{
+    padding: 80px 10% 80px !important;
+    background: linear-gradient(270deg, #0F0F0F 15.47%, rgba(15, 15, 15, 0.731185) 49%, rgba(15, 15, 15, 0.34) 75.16%);
+    
+}
+
+.goAnchor{
+    font-size: 15px !important;
+}
+
+/* company assets ends */
+
+
+/* footer starts */
+
+#footMain{
+    background-color: rgb(22, 22, 22);
+}
+#footSpan{
+    font-size: 12px;
+    color: rgb(255 255 255 / 70%) !important;
+}
+
+#footerUl li a{
+    font-size: 15px !important;
+    /* font-weight: 300 !important; */
+}
+
+@media only screen and (max-width: 575px){
+    #footer{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    #colThreeFoot{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+/* footer ends */

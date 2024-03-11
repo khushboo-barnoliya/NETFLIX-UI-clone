@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/signIn.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/fav-icon.png" type="image/x-icon">
+    
+    <!-- bs5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Commissioner:wght@100;300;500;700;900&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <div class="container-fluid p-0 bg-black position-relative" id="mainBg">
+
+        <img src="img/signinBg.jpg" class="bgImg opacity-50" id="bgImg" alt="">
+
+        <div class="container-fluid d-flex flex-column position-absolute p-0 top-0" style="height: 100%;">
+    
+            <!-- navbar starts -->
+                <nav class="navbar bg-transparent align-items-center w-100 px-5 d-flex justify-content-center top-0" style="z-index: 10;" id="navbar">
+                    <div class="container-fluid nav-inner py-2 mx-5 px-5" id="navbarInner">
+                        <a href="index.html" class="navbar-brand mt-1 px-2" style="max-width: 100% !important;" id="navbarBrand">
+                            <img src="img/logo.png" width="150" alt="">
+                        </a>
+                    </div>
+                </nav>
+
+            <!-- navbar ends -->
+
+            <!-- sign-in form starts -->
+           
+
+            <div class="container-fluid d-flex justify-content-center align-items-center p-0" id="signIn">
+
+                <div class="container p-5 mb-5 rounded-2 bg-black d-flex justify-content-evenly flex-column bg-opacity-75" id="signInner">
+                    <h2 class="fw-semibold text-white px-4">Sign In</h2>
+
+                    <form class="mailForm p-4 d-flex flex-column gap-3">
+                        <div class="form-floating w-100 rounded-1 " style="background-color: rgb(22 22 22 / 70%) !important;">
+                            <input type="email" class="form-control rounded-1 bg-transparent" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput" class="inpLabel d-block bg-transparent fw-bold" id="inpLabel">Email or phone number</label>
+                          </div>
+
+                        <div class="form-floating w-100 rounded-1 " style="background-color: rgb(22 22 22 / 70%) !important;">
+                            <input type="password" class="form-control rounded-1 bg-transparent" id="floatingPassword" placeholder="name@example.com">
+                            <label for="floatingPassword" class="inpLabel d-block bg-transparent fw-bold" id="inpLabel">Password</label>
+                          </div>
+                          <a href="#"><button class="btn w-100 signin rounded-1 border-0 text-white fw-bold" style="background-color: rgb(229, 9, 20) !important; font-size: 1.5rem;">Sign In</button></a>
+                          <a href="#" class="text-center text-white text-decoration-none fw-bold">Forgot password?</a>
+                    </form>
+                    
+
+
+                          <div class="remBottom d-flex flex-column gap-2 px-4">
+                            <div class="remember text-white d-flex align-items-center gap-2">
+                                <div class="cntr">
+                                    <input checked="" type="checkbox" id="cbx" class="hidden-xs-up">
+                                    <label for="cbx" class="cbx"></label>
+                                  </div>
+                                <label for="rmbrMe" class="fw-semibold">Remember Me</label>
+                            </div>
+
+                            <span class="d-flex align-items-center gap-2"><span  style="color: #B4B4B4; font-weight: 900;">New to Netflix?</span><a href="index.html" class="anchorHov text-decoration-none text-white fw-bolder">Sign Up Now.</a></span>
+
+                            <p class="m-0" style="font-weight: bold; font-size: 0.8rem; color: #B4B4B4;">This page is protected by Google reCAPTCHA to ensure you're not a bot. <button class="bg-transparent border-0 text-primary fw-bold anchorHov" id="learnMore">Learn more.</button></p>
+                            <span id="collapseDown" style="font-weight: bold; font-size: 0.8rem; color: #B4B4B4;">The information collected by Google reCAPTCHA is subject to the Google 
+                              <a href="#" class="anchorHov text-decoration-none">Privacy Policy</a> and <a href="#" class="anchorHov text-decoration-none">Terms and Service</a>, and is used for providing, maintaining, and improving the reCAPTCHA service and for general security purposes (it is not used for personalised advertising by Google).</span>
+                          </div>
+
+                    
+                </div>
+            </div>
+            <!-- sign-in form ends -->
+
+
+            <!-- footer starts -->
+            <footer class="py-4 px-3 d-flex align-items-center bg-black bg-opacity-75">
+                <div class="container-fluid p-5" id="footCont">
+                    <div class="container px-5 d-flex justify-content-center flex-column gap-1" id="footInner">
+                        <h6 class="fw-bold" style="color: #B4B4B4;">Questions? &nbsp;&nbsp; Call: <a href="tel:000-800-100-8343" class="anchorHov text-decoration-none" style="color: #B4B4B4;">000-800-100-8343</a></h6>
+
+                        <div class="footerOptions">
+                            <ul class="list-unstyled d-flex flex-wrap" id="footerUl">
+                                <li class="w-25 my-2"><a href="FAQ.html" class="fw-bolder" style="color: #B4B4B4;">FAQ</a></li>
+                                <li class="w-25 my-2"><a href="#" class="fw-bolder" style="color: #B4B4B4;">Help center</a></li>
+                                <li class="w-25 my-2"><a href="#" class="fw-bolder" style="color: #B4B4B4;">Terms of Use</a></li>
+                                <li class="w-25 my-2"><a href="#" class="fw-bolder" style="color: #B4B4B4;">Privacy</a></li>
+                                <li class="w-25 my-2"><a href="#" class="fw-bolder" style="color: #B4B4B4;">Cookie Preferences</a></li>
+                                <li class="w-25 my-2"><a href="#" class="fw-bolder" style="color: #B4B4B4;">Corporate Information</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-3 position-relative">
+                            <button id="langBtn2" class="btn bg-black bg-opacity-50 px-4 py-1 position-relative dropdown-toggle text-white d-flex align-items-center justify-content-between gap-2" style="border: 0.5px solid rgb(138, 138, 138);" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" x="0" y="0" viewBox="0 0 469.333 469.333" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M253.227 300.267 199.04 246.72l.64-.64c37.12-41.387 63.573-88.96 79.147-139.307h62.507V64H192V21.333h-42.667V64H0v42.453h238.293c-14.4 41.173-36.907 80.213-67.627 114.347-19.84-22.08-36.267-46.08-49.28-71.467H78.72c15.573 34.773 36.907 67.627 63.573 97.28l-108.48 107.2L64 384l106.667-106.667 66.347 66.347 16.213-43.413zM373.333 192h-42.667l-96 256h42.667l24-64h101.333l24 64h42.667l-96-256zm-56 149.333L352 248.853l34.667 92.48h-69.334z" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg>
+                                <span id="langSpan2"class="text-start">English</span>
+                            </button>
+                            <ul class="text-center mt-1 d-none overflow-hidden position-absolute list-unstyled bg-white w-50 rounded-1" id="langDrop2">
+                            <li class="langList2 px-3 lh-lg"><a class="text-decoration-none w-100 text-black langItems">English</a></li>
+                            <li class="langList2 px-3 lh-lg"><a class="text-decoration-none w-100 text-black langItems">&nbsp;&nbsp;हिन्दी&nbsp;&nbsp;&nbsp;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </footer>
+            <!-- footer ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <!-- js -->
+    <script src="signIn.js"></script>
+    <!-- bs5 js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>

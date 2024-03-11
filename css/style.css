@@ -1,0 +1,274 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit' !important;
+    scroll-behavior: smooth !important;
+}
+
+*::selection{
+    background-color: #4C4948 !important;
+    color: white;
+    
+}
+/* navbar starts */
+
+header{
+    z-index: 5;
+}
+
+.buttonDiv button{
+    font-size: 13px !important;
+}
+
+
+#langDrop.langDropShow{
+    position: absolute;
+    display: block !important;
+}
+
+#langDrop{
+    min-width: 3rem !important;
+    max-width: 8.8rem !important;
+}
+
+.langActive{
+    font-weight: bold;
+    background-color: rgb(216, 216, 216);
+
+}
+
+.buttonDiv button{
+    font-size: 18px !important;
+    font-weight: bold;
+}
+
+.buttonDiv{
+    max-width: 100% !important;
+    /* height: 2rem !important; */
+    /* font-size: 0.5rem !important; */
+}
+
+
+
+@media only screen and (max-width: 200px){
+
+    .navbar-brand img{
+        width: 100% !important;
+    }
+}
+@media only screen and (max-width: 800px){
+
+    .navbar-brand{
+        width: 40% !important;
+    }
+    #mail{
+        flex-wrap: wrap !important;
+    }
+}
+@media only screen and (max-width: 600px){
+    #langSpan{
+        display: none;
+    }
+    .buttonDiv #langBtn{
+        padding: 0.5rem !important;
+    }
+    #header{
+        padding-left: 1.2rem !important;
+        padding-right: 1.2rem !important;
+    }
+    #langDrop{
+        font-size: 0.6rem !important;
+    }
+
+}
+@media only screen and (max-width: 1280px){
+    #navbar{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .navbar-brand img{
+        max-width: 100% !important;
+    }
+}
+
+
+#langBtn .dropdown-toggle::after {
+    font-size: 1rem !important;
+}
+
+/* navbar ends */
+
+
+/* hero starts */
+
+.hero-section{
+    min-height: 43rem;
+}
+.hero-backGround{
+    min-height: 43rem !important;
+}
+
+.hero-backGround img{
+    height: 100%;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+    position: absolute;
+    transform: scale(1.25) translateY(-9.5%);
+}
+
+.hero-title{
+    height: 100% !important;
+    width: 100% !important;
+    background: linear-gradient(180deg, #000000de, #00000060, #000000de);
+}
+.form-control{
+    border: 1px solid rgb(94,96,96) !important;
+}
+
+.form-control::placeholder{
+    user-select: none !important;
+}
+
+.inpLabel{
+    color: #B4B4B4 !important;
+}
+
+.form-control:focus {
+    color: #ffffff !important;
+    background-color: transparent !important;
+    border-color: #ffffff !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(252, 252, 252, 0.349) !important;
+}
+
+.form-floating>.form-control:focus~label {
+    font-size: 0.8rem !important;
+    font-weight: 100 !important;
+}
+
+.form-floating>.form-control-plaintext~label::after, .form-floating>.form-control:focus~label::after, .form-floating>.form-control:not(:placeholder-shown)~label::after, .form-floating>.form-select~label::after {
+    position: absolute;
+    inset: 1rem 0.2rem;
+    z-index: -1;
+    height: 1.5em;
+    content: "";
+    background-color: transparent !important;
+}
+
+.getStarted{
+    font-weight: bold !important;
+    background-color: rgb(229, 9, 20) !important;
+}
+
+
+/* hero ends */
+
+
+/* tv section starts */
+
+@media only screen and (max-width: 992px){
+    #boxTitle{
+        text-align: center !important;
+    }
+}
+
+/* tv section ends */
+
+
+/* accordion section starts */
+
+.accordionInner{
+    background-color: #2D2D2D;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.accordionInner:hover{
+    background-color: #414141;
+}
+.accordCollapse{
+    border-top: 2px solid black;
+    background-color: #2D2D2D;
+    color: white !important;
+    font-weight: 400;
+    transition: all 0.5s ease;
+    display: none;
+    padding: 1rem;
+}
+.accordionMain.accoShow .accordCollapse{
+    display: block;
+
+}
+
+
+@media only screen and (max-width: 450px){
+    .accordionMain span, .accordCollapse p{
+        font-size: 1rem !important;
+    }
+}
+
+@media only screen and (max-width: 250px){
+    .accordionMain span, .accordCollapse p{
+        font-size: 0.8rem !important;
+    }
+}
+@media only screen and (max-width: 768px){
+    #mail{
+        flex-direction: column !important;
+    }
+
+    #mail .form-floating{
+        width: 100% !important;
+    }
+}
+/* accordion section end */
+
+
+/* footer starts */
+
+#footerUl li:active > a{
+    color: red !important;
+}
+
+#langDrop3.langDropShow3{
+    position: absolute;
+    display: block !important;
+}
+
+.langActive3{
+    font-weight: bold;
+    background-color: rgb(216, 216, 216);
+
+}
+
+footer #langDrop3{
+    min-width: 8.8rem !important;
+    max-width: 8.8rem !important;
+}
+
+footer .col-3 {
+    flex: 0 0 auto;
+    width: 50.5%;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    #footerUl li{
+        width: 50% !important;
+    }
+    #footCont, #footInner{
+        padding: 0 !important;
+    }
+    
+}
+/* footer ends */
+
+

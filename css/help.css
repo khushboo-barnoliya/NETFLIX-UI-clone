@@ -1,0 +1,203 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit' !important;
+    scroll-behavior: smooth !important;
+    
+}
+*::selection{
+    background-color: #4C4948 !important;
+    color: white;
+    
+}
+
+/* navbar starts */
+
+.anchorHov:hover{
+    text-decoration: underline !important;
+    color: #000000ab !important;
+
+}
+.anchorBtn:hover{
+    border-color: black !important;
+    background-color: rgb(128 128 128 / 20%) !important;
+}
+
+#signIn:hover{
+    background-color: #c11119 !important;
+}
+
+/* navbar ends */
+
+
+/* searchbar section starts */
+
+.searchControlWrapper{
+    padding: 2px;
+    border-radius: 4px;
+    background: linear-gradient(to right, #e50914 -0.08%, #c94ff5 81.14%, #5b79f1 99.92%);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.inputControl{
+    padding: 9px 16px 9px 50px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+}
+
+.inputControl:focus{
+    border-color: transparent;
+    outline: transparent;
+}
+
+.search-section p, .search-section p > a{
+    color: rgb(0 0 0 / 70%) !important;
+}
+
+.search-section p > a:hover{
+    color: rgb(0, 0, 0) !important;
+}
+
+
+/* searchbar section ends */
+
+
+/* help center search starts */
+
+#radialBg{
+    background: radial-gradient(300% 100% at center top, rgba(169, 185, 250, 0.15) 0%, rgba(251, 251, 251, 0) 25%) !important;
+}
+
+/* help center search ends */
+
+
+/* main content starts */
+
+.anchorLine:hover{
+    text-decoration: underline !important;
+}
+.anchorLine:hover .arrowDown > svg{
+    animation: bounce 0.8s linear;
+}
+
+@keyframes bounce{
+    25%{
+        transform: translateY(10px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+    75%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.formFixed{
+    max-width: 600px;
+
+}
+
+.fixedSearcBar{
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.2s;
+}
+
+#fixedSearcBar.showSearchBar{
+    position: fixed;
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+#columMain{
+    max-width: 38rem;
+}
+
+
+
+
+/* main content ends */
+
+
+
+
+
+
+/* accordion starts */
+
+.accoHelp{
+    border: 1px solid rgb(128 128 128 / 40%);
+}
+
+
+.accordion-button:not(.collapsed) {
+    color: var(--bs-accordion-active-color);
+    background-color: transparent !important;
+}
+
+.accordion-button:focus{
+    z-index: 3;
+    border-color: transparent;
+    outline: 0;
+    box-shadow: none !important;
+}
+/* accordion ends */
+
+
+/* quick links */
+
+.contactBtn:hover{
+    background-color: rgb(0 0 0 / 70%) !important;
+}
+
+@media only screen and (max-width: 624px){
+    #quickLinks{
+        padding: 0 20px !important;
+    }
+}
+
+/* quick links */
+
+
+
+/* footer starts */
+
+.footer{
+    background-color: #fafafa;
+}
+#lang-switcher{
+    appearance: none;
+    -webkit-appearance: none;
+    color: #8b8a88;
+    font-size: 1.1rem;
+}
+#lang-switcher:focus{
+    outline: none !important;
+}
+
+.select{
+    max-width: 12rem !important;
+    border: 1px solid #8b8a88 !important;
+    accent-color: #8b8a88 !important;
+    transition: all 0.3s ease;
+}
+
+.select:hover{
+    background-color: #8b8a88;
+}
+
+.select:hover select{
+    color: #ffffff !important;
+}
+.select:hover select > option{
+    color: rgb(0, 0, 0) !important;
+}
+.select:hover #downArrow > path{
+    fill: white;
+}
+
+/* footer ends */

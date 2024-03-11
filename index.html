@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix India - Watch TV Shows Online, Watch Movies Online | Khushboo Coding</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/fav-icon.png" type="image/x-icon">
+
+    <!-- bs5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Commissioner:wght@100;300;500;700;900&display=swap" rel="stylesheet">
+
+  </head>
+<body class="bg-black">
+
+  <div class="fullBody container-fluid p-0 pb-5">
+
+        <!-- navbar starts -->
+
+        <header class="position-absolute w-100 px-5 top-0" id="header">
+            <nav class="navbar bg-transparent py-4 px-5 mx-5 flex-nowrap" id="navbar">
+                <div class="container-fluid col-lg-12 justify-content-between">
+                  <a href="index.html" class="navbar-brand" style="max-width: 100% !important;">
+                    <img src="img/logo.png" width="150" alt="">
+                  </a>
+
+                  <div class="buttonDiv d-flex gap-4 justify-content-between align-items-center">
+                    <div class="rounded-1 position-relative d-flex align-items-center justify-content-center" style="max-width: 100% !important;">
+                        <button id="langBtn" class="btn bg-black bg-opacity-50 px-3 py-1 position-relative dropdown-toggle text-white d-flex align-items-center justify-content-between gap-2" style="border: 0.5px solid rgb(138, 138, 138);" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="max-width: 100% !important;" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" x="0" y="0" viewBox="0 0 469.333 469.333" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M253.227 300.267 199.04 246.72l.64-.64c37.12-41.387 63.573-88.96 79.147-139.307h62.507V64H192V21.333h-42.667V64H0v42.453h238.293c-14.4 41.173-36.907 80.213-67.627 114.347-19.84-22.08-36.267-46.08-49.28-71.467H78.72c15.573 34.773 36.907 67.627 63.573 97.28l-108.48 107.2L64 384l106.667-106.667 66.347 66.347 16.213-43.413zM373.333 192h-42.667l-96 256h42.667l24-64h101.333l24 64h42.667l-96-256zm-56 149.333L352 248.853l34.667 92.48h-69.334z" fill="#ffffff" opacity="1" data-original="#000000"></path></g></svg>
+                            <span id="langSpan" style="max-width: 100% !important;" class="text-start">English</span>
+                        </button>
+                        <ul class="text-center mt-1 p-0 d-none overflow-hidden position-absolute list-unstyled bg-white w-100 rounded-1 top-100" id="langDrop">
+                          <li class="langList lh-lg"><a class="text-decoration-none w-100 text-black langItems" href="#">English</a></li>
+                          <li class="langList lh-lg"><a class="text-decoration-none w-100 text-black langItems" href="#">&nbsp;&nbsp;हिन्दी&nbsp;&nbsp;&nbsp;</a></li>
+                        </ul>
+                    </div>
+
+                    <a href="sign In.html"><button class="btn signin rounded-1 border-0 text-white text-nowrap" style="background-color: rgb(229, 9, 20) !important; font-size: 0.8rem !important;">Sign In</button></a>
+                    </div>
+                </div>
+              </nav>
+        </header>
+
+        <!-- navbar ends -->
+        
+
+
+
+        <!-- hero section starts -->
+
+            <section class="hero-section position-relative">
+                <div class="container-fluid hero-backGround p-0 overflow-hidden position-relative">
+                    <img src="img/bg2.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="hero-title px-4 py-5 text-center position-absolute top-0 d-flex flex-column justify-content-center align-items-center">
+                    <h1 class="display-5 fw-bolder text-white mt-5 pt-5">Unlimited movies, TV shows and more</h1>
+                    <div class="col-lg-6 mx-auto">
+                      <p class="lead fs-3 fw-normal text-white my-2">Watch anywhere. Cancel anytime.</p>
+                      <p class="lead text-white my-3 fw-medium">Ready to watch? Enter your email to create or restart your membership.</p>
+                      <div class="d-flex align-items-center gap-3 justify-content-center" id="mail">
+                        <div class="form-floating w-50 rounded-1" style="background-color: rgb(22 22 22 / 70%) !important;">
+                          <input type="email" class="form-control rounded-1 bg-transparent" id="floatingInput" placeholder="name@example.com">
+                          <label for="floatingInput" class="inpLabel bg-transparent fw-bold">Email address</label>
+                        </div>
+                        <button type="button" class="btn getStarted px-4 gap-2 text-white rounded-1 d-flex align-items-center fs-3">Get Started 
+                          <svg viewBox="0 0 24 24" width="30" height="30" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+                      </div>
+                    </div>
+                  </div>
+            </section>  
+
+        <!-- hero section ends -->
+
+
+        <!-- TV section starts -->
+
+            <section class="television-section" style="border-top: 8px solid #232323;">
+              <div class="container-fluid">
+                <div class="container col-xxl-8 px-4 py-5">
+                  <div class="row flex-lg-row align-items-center justify-content-center g-5">
+
+                    <div class="col-lg-6" id="boxTitle">
+                      <h1 class="display-5 fw-bolder text-white lh-1 mb-4" style="font-weight: 900 !important;">Enjoy on your TV</h1>
+                      <p class="lead fs-4 text-white fw-medium">Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+                    </div>
+
+                    <div class="col-10 col-sm-8 col-lg-6 position-relative justify-content-center" style="z-index: 0;">
+                      <img src="img/tv.png" class="d-block mx-lg-auto img-fluid" style="z-index: 2;" alt="" width="700" height="500" loading="lazy">
+
+                      <div class="tv-video position-absolute overflow-hidden" style="z-index: -1; width: 70%; top: 20.5%; left: 16%;">
+                        <video src="video/video-tv-in-0819.m4v" autoplay="true" loop="true" style="height: 100%; width: 100%;"></video>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </section>
+
+        <!-- TV section ends -->
+
+
+        <!-- download section starts -->
+
+            <section class="download-section" style="border-top: 8px solid #232323;">
+              <div class="container-fluid">
+                <div class="container col-xxl-8 px-4 py-5">
+                  <div class="row flex-lg-row-reverse align-items-center g-5 justify-content-center">
+
+                    
+
+                    <div class="col-lg-6" id="boxTitle">
+                      <h1 class="display-5 fw-bolder text-white lh-1 mb-4" style="font-weight: 900 !important;">Download your shows to watch offline</h1>
+                      <p class="lead fs-4 text-white fw-medium">Save your favourites easily and always have something to watch.</p>
+                    </div>
+
+
+                    <div class="col-10 col-sm-8 col-lg-6 d-flex justify-content-center position-relative" style="z-index: 0;">
+
+                        <img src="img/mobile.jpg" class="d-block mx-lg-auto img-fluid" width="700" height="500" loading="lazy">
+
+                      <div class="boxshot col-6 position-absolute rounded-4 bg-black d-flex align-items-center p-2" style="border: 2px solid #232323; font-size: 1rem; bottom: 6%; min-width: 18rem;">
+
+                        <img src="img/boxshot.png" class="me-3 col-2" width="40" style="min-width: 2rem !important;" alt="">
+
+                        <div class="st col-7">
+                          <div class="text-white">Stranger Things</div>
+                          <div class="text-primary">Downloading...</div>
+                        </div>
+
+                        <img src="img/download-icon.gif" class="" width="40" alt="">
+
+
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </section>
+
+        <!-- download section ends -->
+
+
+
+        <!-- macbook section starts -->
+
+        <section class="mackbook-section" style="border-top: 8px solid #232323;">
+          <div class="container-fluid">
+            <div class="container col-xxl-8 px-4 py-5">
+              <div class="row flex-lg-row align-items-center justify-content-center g-5">
+
+                <div class="col-lg-6" id="boxTitle">
+                  <h1 class="display-5 fw-bolder text-white lh-1 mb-4" style="font-weight: 900 !important;">Watch Everywhere</h1>
+                  <p class="lead fs-4 text-white fw-medium">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+                </div>
+
+                <div class="col-10 col-sm-8 col-lg-6 position-relative justify-content-center" style="z-index: 0;">
+                  <img src="img/macbook.png" class="d-block mx-lg-auto img-fluid" style="z-index: 2;" alt="" width="700" height="500" loading="lazy">
+
+                  <div class="tv-video position-absolute overflow-hidden" style="z-index: -1; width: 58%; top: 9%; left: 20%;">
+                    <video src="video/macVideo.m4v" autoplay="true" loop="true" style="height: 100%; width: 100%;"></video>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </section>
+
+    <!-- macbook section ends -->
+
+
+
+    <!-- children section starts -->
+
+    <section class="children-section" style="border-top: 8px solid #232323;">
+      <div class="container-fluid py-3">
+        <div class="container col-xxl-8 px-4 py-5">
+          <div class="row flex-lg-row-reverse align-items-center g-5 justify-content-center">
+
+            
+
+            <div class="col-lg-6" id="boxTitle">
+              <h1 class="display-5 fw-bolder text-white lh-1 mb-4" style="font-weight: 900 !important;">Create profiles for kids</h1>
+              <p class="lead fs-4 text-white fw-medium">Send children on adventures with their favourite characters in a space made just for them—free with your membership.</p>
+            </div>
+
+
+            <div class="col-10 col-sm-8 col-lg-6 d-flex justify-content-center position-relative" style="z-index: 0;">
+
+                <img src="img/children.png" class="d-block mx-lg-auto img-fluid" width="700" height="500" loading="lazy">
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- children section ends -->
+
+
+
+
+
+
+    <!-- accordion section starts -->
+
+    <section class="accordion-section" style="border-top: 8px solid #232323;">
+      <div class="container-fluid py-3 d-flex align-items-center flex-column">
+        <div class="container d-flex flex-column gap-2 px-4 py-5">
+
+          <h1 class="display-4 fw-bold text-center mb-4 text-white text-capitalize">frequently asked questions</h1>
+
+            <div class="accordionMain">
+              <div class="accordionInner user-select-none fs-4 d-flex justify-content-between align-items-center p-4">
+                <span>What is Netflix?</span>
+                <img src="img/plus.png" width="20" height="20" alt="">
+              </div>
+
+              <div class="accordCollapse fw-light fs-4 overflow-hidden">
+                <p class="m-0">Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices. </p><br><p class="m-0">You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!</p>
+              </div>
+            </div>
+
+            <div class="accordionMain">
+              <div class="accordionInner user-select-none fs-4 d-flex justify-content-between align-items-center p-4">
+                <span>How much does Netflix cost?</span>
+                <img src="img/plus.png" width="20" height="20" alt="">
+              </div>
+
+              <div class="accordCollapse fw-light fs-4 overflow-hidden">
+                <p class="m-0">Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹149 to ₹649 a month. No extra costs, no contracts.</p>
+              </div>
+            </div>
+
+            <div class="accordionMain">
+              <div class="accordionInner user-select-none fs-4 d-flex justify-content-between align-items-center p-4">
+                <span>Wher can I watch?</span>
+                <img src="img/plus.png" width="20" height="20" alt="">
+              </div>
+
+              <div class="accordCollapse fw-light fs-4 overflow-hidden">
+                <p class="m-0">Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.</p><br><p class="m-0">You can also download your favourite shows with the iOS, Android, or Windows 10 app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.</p>
+              </div>
+            </div>
+
+            <div class="accordionMain">
+              <div class="accordionInner user-select-none fs-4 d-flex justify-content-between align-items-center p-4">
+                <span>How do I cancel?</span>
+                <img src="img/plus.png" width="20" height="20" alt="">
+              </div>
+
+              <div class="accordCollapse fw-light fs-4 overflow-hidden">
+                <p class="m-0">Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.</p>
+              </div>
+            </div>
+
+            <div class="accordionMain">
+              <div class="accordionInner user-select-none fs-4 d-flex justify-content-between align-items-center p-4">
+                <span>What can I watch on Netflix?</span>
+                <img src="img/plus.png" width="20" height="20" alt="">
+              </div>
+
+              <div class="accordCollapse fw-light fs-4 overflow-hidden">
+                <p class="m-0">Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.</p>
+              </div>
+            </div>
+
+            <div class="accordionMain">
+              <div class="accordionInner user-select-none fs-4 d-flex justify-content-between align-items-center p-4">
+                <span>Is Netflix good for kids?</span>
+                <img src="img/plus.png" width="20" height="20" alt="">
+              </div>
+
+              <div class="accordCollapse fw-light fs-4 overflow-hidden">
+                <p class="m-0">The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and films in their own space.</p><br><p class="m-0">Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.</p>
+              </div>
+            </div>
+          
+            <form class="emailForm px-3 my-5">
+              <p class="lead text-white my-3 fw-medium text-center">Ready to watch? Enter your email to create or restart your membership.</p>
+                          <div class="d-flex align-items-center gap-3 justify-content-center" id="mail">
+                            <div class="form-floating rounded-1" style="background-color: rgb(22 22 22 / 70%) !important;">
+                              <input type="email" class="form-control rounded-1 bg-transparent" id="floatingInput" placeholder="name@example.com">
+                              <label for="floatingInput" class="inpLabel bg-transparent fw-bold">Email address</label>
+                            </div>
+                            <button type="button" class="btn getStarted px-4 gap-2 text-white rounded-1 d-flex align-items-center fs-3">Get Started 
+                              <svg viewBox="0 0 24 24" width="30" height="30" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+                          </div>
+            </form>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- accordion section ends -->
+          
+
+
+    <!-- footer starts -->
+      <footer class="py-4 px-3 d-flex align-items-center bg-black bg-opacity-75" style="border-top: 8px solid #232323;">
+        <div class="container-fluid p-5" id="footCont">
+          <div class="container px-5 d-flex justify-content-center flex-column gap-1" id="footInner">
+            <h6 class="fw-bold" style="color: #B4B4B4;">Questions? &nbsp;&nbsp; Call: <a href="tel:000-800-100-8343" class="anchorHov text-decoration-underline" style="color: #B4B4B4;">000-800-100-8343</a></h6>
+
+            <div class="footerOptions">
+                <ul class="list-unstyled d-flex flex-wrap" id="footerUl">
+                    <li class="w-25 my-2"><a href="FAQ.html" class="fw-medium" style="color: #B4B4B4;">FAQ</a></li>
+                    <li class="w-25 my-2"><a href="help.html" class="fw-medium" style="color: #B4B4B4;">Help center</a></li>
+                    <li class="w-25 my-2"><a href="sign In.html" class="fw-medium" style="color: #B4B4B4;">Account</a></li>
+                    <li class="w-25 my-2"><a href="media.html" class="fw-medium" style="color: #B4B4B4;">Media Center</a></li>
+                    <li class="w-25 my-2"><a href="#" class="fw-medium" style="color: #B4B4B4;">Investor Relations</a></li>
+                    <li class="w-25 my-2"><a href="#" class="fw-medium" style="color: #B4B4B4;">Jobs</a></li>
+                    <li class="w-25 my-2"><a href="#" class="fw-medium" style="color: #B4B4B4;">Way to watch</a></li>
+                    <li class="w-25 my-2"><a href="#" class="fw-medium" style="color: #B4B4B4;">Terms of Use</a></li>
+                    <li class="w-25 my-2"><a href="#" class="fw-medium" style="color: #B4B4B4;">Privacy</a></li>
+                    <li class="w-25 my-2"><a href="#" class="fw-medium" style="color: #B4B4B4;">Cookie Preferences</a></li>
+                    <li class="w-25 my-2"><a href="#" class="fw-medium" style="color: #B4B4B4;">Corporate Information</a></li>
+                    <li class="w-25 my-2"><a href="#" class="fw-medium" style="color: #B4B4B4;">Contact Us</a></li>
+                    <li class="w-25 my-2"><a href="#" class="fw-medium" style="color: #B4B4B4;">Speed Test</a></li>
+                    <li class="w-25 my-2"><a href="#" class="fw-medium" style="color: #B4B4B4;">Legal Notices</a></li>
+                    <li class="w-25 my-2"><a href="#" class="fw-medium" style="color: #B4B4B4;">Only on Netflix</a></li>
+                </ul>
+            </div>
+            <div class="col-3 mt-1 position-relative">
+                <button id="langBtn3" class="btn bg-black bg-opacity-50 px-4 py-1 position-relative dropdown-toggle text-white d-flex align-items-center justify-content-between gap-2" style="border: 0.5px solid rgb(138, 138, 138);" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" x="0" y="0" viewBox="0 0 469.333 469.333" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M253.227 300.267 199.04 246.72l.64-.64c37.12-41.387 63.573-88.96 79.147-139.307h62.507V64H192V21.333h-42.667V64H0v42.453h238.293c-14.4 41.173-36.907 80.213-67.627 114.347-19.84-22.08-36.267-46.08-49.28-71.467H78.72c15.573 34.773 36.907 67.627 63.573 97.28l-108.48 107.2L64 384l106.667-106.667 66.347 66.347 16.213-43.413zM373.333 192h-42.667l-96 256h42.667l24-64h101.333l24 64h42.667l-96-256zm-56 149.333L352 248.853l34.667 92.48h-69.334z" fill="#ffffff" opacity="1" data-original="#000000" class=""></path></g></svg>
+                    <span id="langSpan3"class="text-start">English</span>
+                </button>
+                <ul class="text-center mt-1 d-none overflow-hidden position-absolute list-unstyled bg-white w-50 rounded-1" id="langDrop3">
+                <li class="langList3 px-3 lh-lg"><a class="text-decoration-none w-100 text-black langItems">English</a></li>
+                <li class="langList3 px-3 lh-lg"><a class="text-decoration-none w-100 text-black langItems">&nbsp;&nbsp;हिन्दी&nbsp;&nbsp;&nbsp;</a></li>
+                </ul>
+            </div>
+            <p class="my-3"><a href="#" class="anchorHov text-decoration-none" style="color: #B4B4B4;">Netflix India</a></p>
+          </div>
+        </div>
+      </footer>
+    <!-- footer ends -->
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+  <!-- js -->
+  <script src="script.js"></script>
+  <!-- bs5 js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

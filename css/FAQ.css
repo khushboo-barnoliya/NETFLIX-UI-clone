@@ -1,0 +1,119 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit' !important;
+    scroll-behavior: smooth !important;
+    
+}
+*::selection{
+    background-color: #4C4948 !important;
+    color: white;
+    
+}
+
+/* navbar starts */
+
+.anchorHov:hover{
+    text-decoration: underline !important;
+    color: #000000ab !important;
+
+}
+.anchorBtn:hover{
+    border-color: black !important;
+    background-color: rgb(128 128 128 / 20%) !important;
+}
+
+#signIn:hover{
+    background-color: #c11119 !important;
+}
+
+/* navbar ends */
+
+
+/* searchbar section starts */
+
+.searchControlWrapper{
+    padding: 2px;
+    border-radius: 4px;
+    background: linear-gradient(to right, #e50914 -0.08%, #c94ff5 81.14%, #5b79f1 99.92%);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.inputControl{
+    padding: 9px 16px 9px 50px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+}
+
+.inputControl:focus{
+    border-color: transparent;
+    outline: transparent;
+}
+
+/* searchbar section ends */
+
+/* main content starts */
+
+.leftPane{
+    width: 68%;
+}
+
+.thinAnchor{
+    text-decoration: none;
+    color: #e50914;
+}
+.thinAnchor:hover{
+    text-decoration: underline;
+}
+
+.contactBtn:hover{
+    background-color: rgb(0 0 0 / 70%) !important;
+}
+
+.rightPane{
+    width: calc(100% - 68%);
+}
+
+.articleTopics{
+    border-top: 6px solid #e50914;
+}
+/* main content ends */
+
+
+/* footer starts */
+
+.footer{
+    background-color: #fafafa;
+}
+#lang-switcher{
+    appearance: none;
+    -webkit-appearance: none;
+    color: #8b8a88;
+    font-size: 1.1rem;
+}
+#lang-switcher:focus{
+    outline: none !important;
+}
+
+.select{
+    max-width: 12rem !important;
+    border: 1px solid #8b8a88 !important;
+    accent-color: #8b8a88 !important;
+    transition: all 0.3s ease;
+}
+
+.select:hover{
+    background-color: #8b8a88;
+}
+
+.select:hover select{
+    color: #ffffff !important;
+}
+.select:hover select > option{
+    color: rgb(0, 0, 0) !important;
+}
+.select:hover #downArrow > path{
+    fill: white;
+}
+
+/* footer ends */
